@@ -31,6 +31,14 @@ body {
     &__logo {
         padding-top: 1.5rem;
         padding-bottom: 1rem;
+
+        @include mixins.tablet {
+            padding-right: 1rem;
+        }
+        @include mixins.desktop {
+            padding-left: 3.93rem;
+            padding-right: 1.5rem;
+        }
     }
 
     &__img {
@@ -43,18 +51,18 @@ body {
         @include mixins.mobile-headersub;
         display: flex;
         flex-direction: row;
+        align-items: baseline;
         margin: 0;
         padding: 0;
         list-style: none;
-    }
-    &__links--spacing {
-            // margin-left: 2.25rem;
-            // margin-right: 2.25rem;
-            width: 100%;
+
+        @include mixins.tablet {
+            display: flex;
+            align-items: baseline;
         }
+    }
     &__links--current {
         border-bottom: 4px solid colors.$primary-color3;
-        padding-bottom: 0;
     }
     &__links--style {
         color: colors.$primary-color3;
@@ -62,22 +70,32 @@ body {
         padding-left: 3.35rem;
         padding-right: 3.35rem;
         padding-bottom: 0.5rem;
-        display: block;
 
         @include mixins.tablet {
-            padding: 1rem 2.25rem 1rem 2.25rem;
+            padding: 1rem 0 1.35rem 0;
+            margin: 1rem 1.5rem 0rem 1.5rem;
         }
     }
     &__links--inactive {
         color: colors.$secondary-color2;
-        @include mixins.mobile-text;
+        @include mixins.inactive-link;
     }
+        
+    &__links--inactive:hover {
+            color: colors.$primary-color3;
+            @extend .navigation__links--current;
+    }
+    
     @include mixins.tablet {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        align-items: center;
+        // align-items: center;
         padding-left: 2.25rem;
         padding-right: 2.25rem;
+    }
+    @include mixins.desktop {
+        padding-left: auto;
+        padding-right: auto;
     }
 }

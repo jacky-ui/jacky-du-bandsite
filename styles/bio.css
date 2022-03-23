@@ -13,7 +13,7 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "avenire-bold";
+  font-family: "avenir-bold";
   src: local("Avenir Next LT Pro Bold"), local("AvenirNextLTPro-Bold"), url("../../assets/font/woff/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/font/woff/AvenirNextLTPro-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
@@ -46,6 +46,17 @@ body {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
+@media screen and (min-width: 768px) {
+  .navigation__logo {
+    padding-right: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .navigation__logo {
+    padding-left: 3.93rem;
+    padding-right: 1.5rem;
+  }
+}
 .navigation__img {
   min-width: 7.5rem;
   max-width: 7.5rem;
@@ -59,16 +70,19 @@ body {
   font-weight: 600;
   display: flex;
   flex-direction: row;
+  align-items: baseline;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.navigation__links--spacing {
-  width: 100%;
+@media screen and (min-width: 768px) {
+  .navigation__lists {
+    display: flex;
+    align-items: baseline;
+  }
 }
-.navigation__links--current {
+.navigation__links--current, .navigation__links--inactive:hover {
   border-bottom: 4px solid #FFFFFF;
-  padding-bottom: 0;
 }
 .navigation__links--style {
   color: #FFFFFF;
@@ -76,27 +90,34 @@ body {
   padding-left: 3.35rem;
   padding-right: 3.35rem;
   padding-bottom: 0.5rem;
-  display: block;
 }
 @media screen and (min-width: 768px) {
   .navigation__links--style {
-    padding: 1rem 2.25rem 1rem 2.25rem;
+    padding: 1rem 0 1.35rem 0;
+    margin: 1rem 1.5rem 0rem 1.5rem;
   }
 }
 .navigation__links--inactive {
   color: #E1E1E1;
   font-family: "avenir-regular";
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: normal;
+  font-size: 0.801rem;
+  line-height: 2rem;
+}
+.navigation__links--inactive:hover {
+  color: #FFFFFF;
 }
 @media screen and (min-width: 768px) {
   .navigation {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
     padding-left: 2.25rem;
     padding-right: 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .navigation {
+    padding-left: auto;
+    padding-right: auto;
   }
 }/*# sourceMappingURL=bio.css.map */
