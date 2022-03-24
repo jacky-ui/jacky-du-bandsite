@@ -66,13 +66,6 @@
     font-weight: 700;
 }
 
-// Inactive links
-@mixin inactive-link {
-    font-family: 'avenir-regular';
-    font-size: 0.801rem;
-    line-height: 2rem;
-}
-
 // Screen mixins
 @mixin tablet {
     @media screen and (min-width: variables.$tablet-breakpoint) {
@@ -84,4 +77,21 @@
     @media screen and (min-width: variables.$desktop-breakpoint) {
         @content;
     }
+}
+
+// Inactive links
+@mixin inactive-link {
+    font-family: 'avenir-regular';
+    font-size: 0.801rem;
+    line-height: 2rem;
+}
+
+// Background Opacity 
+@mixin background-opacity {
+    background-color: rgba(50, 50, 50, 0.5);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
 }

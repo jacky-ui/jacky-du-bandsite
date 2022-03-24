@@ -99,3 +99,47 @@ body {
         padding-right: auto;
     }
 }
+
+
+// Hero banner 
+.hero {
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-position: right;
+    background-size: cover;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 50vh;
+    max-height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include mixins.tablet {
+        min-height: 65vh;
+    }
+
+    @include mixins.desktop {
+        min-height: 85vh;
+    }
+
+    &::before {
+        @include mixins.background-opacity;
+    }
+
+    &__text {
+        @include mixins.mobile-header;
+        color: colors.$primary-color3;
+        position: relative;
+        margin-top: 0;
+        padding-left: 1rem;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-pgheader;
+            padding-left: 2.25rem;
+
+            @include mixins.desktop {
+                padding-left: 6.125rem;
+            }
+        }
+    }
+}
