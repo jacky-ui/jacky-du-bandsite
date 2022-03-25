@@ -115,7 +115,7 @@ body {
     align-items: center;
 
     @include mixins.tablet {
-        min-height: 65vh;
+        min-height: 75vh;
     }
 
     @include mixins.desktop {
@@ -140,6 +140,66 @@ body {
             @include mixins.desktop {
                 padding-left: 6.125rem;
             }
+        }
+    }
+}
+
+// // About Band section
+.about {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+    @include mixins.tablet {
+        margin-left: 2.25rem;
+        margin-right: 2.25rem;
+    }
+    @include mixins.desktop {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mixins.tablet { 
+            margin-left: 3.5rem;
+            margin-right: 3.5rem;
+        }
+        @include mixins.desktop {
+            margin-left: 4.5rem;
+            margin-right: 4.5rem;
+        }
+    
+        &--sizing {
+            width: 100%;
+            height: 55vh;
+
+            @include mixins.tablet {
+                height: 80vh;
+            }
+            @include mixins.desktop {
+                height: 90vh;
+            } 
+        }  
+    }
+
+    &__heading {
+        color: colors.$primary-color1;
+        @include mixins.mobile-header;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            margin-top: 3rem;
+            margin-bottom: 2.25rem;
+            @include mixins.desk-tab-subheader;
+            font-size: 2rem;
+        }
+        @include mixins.desktop {
+            @include mixins.desk-tab-subheader;
+            font-size: 2rem;
         }
     }
 }
