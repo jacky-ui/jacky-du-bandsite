@@ -1,20 +1,20 @@
 @font-face {
-  font-family: "avenir-regular";
-  src: url("../../assets/font/woff/AvenirNextLTPro-Regular.woff") format("woff"), url("../../assets/font/woff/AvenirNextLTPro-Regular.woff2") format("woff2");
+  font-family: "AvenirNext";
+  src: url("../assets/font/woff/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/font/woff/AvenirNextLTPro-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "avenir-demi";
-  src: local("Avenir Next LT Pro Demi"), local("AvenirNextLTPro-Demi"), url("../../assets/font/woff/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/font/woff/AvenirNextLTPro-Demi.woff") format("woff");
+  font-family: "AvenirNext";
+  src: local("Avenir Next LT Pro Demi"), local("AvenirNextLTPro-Demi"), url("../assets/font/woff/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/font/woff/AvenirNextLTPro-Demi.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "avenir-bold";
-  src: local("Avenir Next LT Pro Bold"), local("AvenirNextLTPro-Bold"), url("../../assets/font/woff/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/font/woff/AvenirNextLTPro-Bold.woff") format("woff");
+  font-family: "AvenirNext";
+  src: local("Avenir Next LT Pro Bold"), local("AvenirNextLTPro-Bold"), url("../assets/font/woff/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/font/woff/AvenirNextLTPro-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -31,6 +31,37 @@
 
 body {
   margin: 0;
+  background-color: #FFFFFF;
+}
+
+.section__heading {
+  color: #323232;
+  font-family: "AvenirNext";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .section__heading {
+    margin-top: 3rem;
+    margin-bottom: 2.25rem;
+    font-family: "AvenirNext";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .section__heading {
+    font-family: "AvenirNext";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    font-size: 2rem;
+  }
 }
 
 .navigation {
@@ -64,7 +95,7 @@ body {
   max-height: 1.25rem;
 }
 .navigation__lists {
-  font-family: "avenir-demi";
+  font-family: "AvenirNext";
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -99,7 +130,7 @@ body {
 }
 .navigation__links--inactive {
   color: #E1E1E1;
-  font-family: "avenir-regular";
+  font-family: "AvenirNext";
   font-size: 0.801rem;
   line-height: 2rem;
 }
@@ -141,7 +172,7 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .hero {
-    min-height: 85vh;
+    min-height: 90vh;
   }
 }
 .hero::before {
@@ -153,7 +184,7 @@ body {
   width: 100%;
 }
 .hero__text {
-  font-family: "avenir-bold";
+  font-family: "AvenirNext";
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: bold;
@@ -164,7 +195,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .hero__text {
-    font-family: "avenir-bold";
+    font-family: "AvenirNext";
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: bold;
@@ -178,8 +209,8 @@ body {
 }
 
 .about {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .about {
@@ -206,50 +237,87 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .about__img {
-    margin-left: 4.5rem;
-    margin-right: 4.5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 }
 .about__img--sizing {
   width: 100%;
-  height: 55vh;
 }
-@media screen and (min-width: 768px) {
-  .about__img--sizing {
-    height: 80vh;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .about__img--sizing {
-    height: 90vh;
-  }
-}
-.about__heading {
+.about__quote {
+  font-family: "AvenirNext";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
   color: #323232;
-  font-family: "avenir-bold";
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: bold;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .about__heading {
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
-    font-family: "avenir-demi";
+  .about__quote {
+    margin: 2.25rem 3.5rem;
+    font-family: "AvenirNext";
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .about__heading {
-    font-family: "avenir-demi";
+  .about__quote {
+    margin: 2.25rem 5rem;
+    width: 64%;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .autobiography {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .autobiography {
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+  }
+}
+.autobiography__heading {
+  font-family: "AvenirNext";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .autobiography__heading {
+    font-family: "AvenirNext";
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
-    font-size: 2rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .autobiography__paragraphs {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+.autobiography__paragraphs--style {
+  font-family: "AvenirNext";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+}
+@media screen and (min-width: 768px) {
+  .autobiography__paragraphs--style {
+    font-family: "AvenirNext";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }/*# sourceMappingURL=bio.css.map */

@@ -3,21 +3,21 @@
 
 // Font mixins mobile
 @mixin mobile-header {
-    font-family: 'avenir-bold';
+    font-family: 'AvenirNext';
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: bold;
 }
 
 @mixin mobile-headersub {
-    font-family: 'avenir-demi';
+    font-family: 'AvenirNext';
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 600;
 }
 
 @mixin mobile-text {
-    font-family: 'avenir-regular';
+    font-family: 'AvenirNext';
     font-size: 0.8125rem;
     line-height: 1.125rem;
     font-weight: normal;
@@ -25,42 +25,42 @@
 
 // Font mixins desktop and tablet
 @mixin desk-tab-pgheader {
-    font-family: 'avenir-bold';
+    font-family: 'AvenirNext';
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: bold;
 }
 
 @mixin desk-tab-secheader {
-    font-family: 'avenir-bold';
+    font-family: 'AvenirNext';
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
 }
 
 @mixin desk-tab-subheader {
-    font-family: 'avenir-demi';
+    font-family: 'AvenirNext';
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
 }
 
 @mixin desk-tab-body {
-    font-family: 'avenir-regular';
+    font-family: 'AvenirNext';
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 400;
 }
 
 @mixin desk-tab-footer {
-    font-family: 'avenir-regular';
+    font-family: 'AvenirNext';
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 400;
 }
 
 @mixin desk-tab-labelsbtn {
-    font-family: 'avenir-bold';
+    font-family: 'AvenirNext';
     font-size: 0.75em;
     line-height: 2.75rem;
     font-weight: 700;
@@ -81,7 +81,7 @@
 
 // Inactive links
 @mixin inactive-link {
-    font-family: 'avenir-regular';
+    font-family: 'AvenirNext';
     font-size: 0.801rem;
     line-height: 2rem;
 }
