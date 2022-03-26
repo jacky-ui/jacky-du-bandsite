@@ -337,14 +337,56 @@ body {
     padding-right: 2.25rem;
   }
 }
-
+@media screen and (min-width: 1280px) {
+  .gallery {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
 .gallery__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
+@media screen and (min-width: 768px) {
+  .gallery__container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+.gallery__heading {
+  font-family: "AvenirNext";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .gallery__heading {
+    padding-left: 1.15rem;
+    font-family: "AvenirNext";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .gallery__heading {
+    font-family: "AvenirNext";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    padding-left: 2rem;
+  }
+}
 .gallery__img--sizing {
   width: 100%;
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .gallery__img--sizing {
+    width: 30%;
+  }
 }/*# sourceMappingURL=bio.css.map */
