@@ -54,10 +54,11 @@ body {
 
     &__logo {
         padding-top: 1.5rem;
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
 
         @include mixins.tablet {
             padding-right: 1rem;
+            padding-bottom: 1rem;
         }
         @include mixins.desktop {
             padding-left: 3.93rem;
@@ -132,7 +133,7 @@ body {
     background-size: cover;
     min-width: 100vw;
     max-width: 100vw;
-    min-height: 50vh;
+    min-height: 30vh;
     max-height: 60vh;
     position: relative;
     display: flex;
@@ -292,10 +293,13 @@ body {
 
         @include mixins.tablet {
             padding-left: 1.15rem;
-            @include mixins.desk-tab-subheader;
+            @include mixins.desk-tab-secheader;
+            margin-top: 3rem;
+            margin-bottom: 2.25rem;
+            
 
         @include mixins.desktop {
-            @include mixins.desk-tab-subheader;
+            @include mixins.desk-tab-secheader;
             padding-left: 2rem;
         }
         }
@@ -308,5 +312,42 @@ body {
         @include mixins.tablet {
             width: 30%;
         }
+    }
+}
+
+// Footer
+.contact {
+    background-color: colors.$primary-color1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &__header {
+        color: colors.$primary-color3;
+        @include mixins.mobile-headersub;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    &__social--icons {
+        margin-right: 1rem;
+    }
+    &__information {
+        @include mixins.mobile-text;
+        color: colors.$primary-color3;
+
+        &--names {
+            font-weight: 700;
+        margin-top: 1.25rem;
+        }
+        &--copyright {
+            padding-bottom: 1rem;
+            margin-bottom: 0;
+            font-size: 0.72rem; 
+        }
+    }
+    &__logo {
+        margin-top: 1.5rem;
+        margin-bottom: 0;
     }
 }
