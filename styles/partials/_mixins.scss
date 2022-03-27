@@ -95,3 +95,14 @@
     position: absolute;
     width: 100%;
 }
+
+// Padding and margin mixins
+@mixin tablet-padding {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+}
+
+@mixin desktop-margin {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}

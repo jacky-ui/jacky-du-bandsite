@@ -115,9 +115,7 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        // align-items: center;
-        padding-left: 2.25rem;
-        padding-right: 2.25rem;
+        @include mixins.tablet-padding;
     }
     @include mixins.desktop {
         padding-left: auto;
@@ -179,8 +177,7 @@ body {
         margin-right: 2.25rem;
     }
     @include mixins.desktop {
-        margin-left: 5rem;
-        margin-right: 5rem;
+        @include mixins.desktop-margin;
     }
 
     // About section image
@@ -194,8 +191,7 @@ body {
             margin-right: 3.5rem;
         }
         @include mixins.desktop {
-            margin-left: 5rem;
-            margin-right: 5rem;
+            @include mixins.desktop-margin;
         }
     
         &--sizing {
@@ -267,8 +263,7 @@ body {
     padding-top: 0.25rem;
 
     @include mixins.tablet {
-        padding-left: 2.25rem;
-        padding-right: 2.25rem;
+        @include mixins.tablet-padding;
     }
     @include mixins.desktop {
         padding-left: 5rem;
@@ -389,7 +384,6 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            // width: 100%;
             }
         @include mixins.desktop {
             display: flex;
