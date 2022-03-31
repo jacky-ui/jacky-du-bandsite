@@ -14,32 +14,15 @@
     }
 }
 
+// Input placeholders
+*::-webkit-input-placeholder {
+    color: colors.$secondary-color1;
+    @include mixins.mobile-text;
+}
+
 body {
     margin: 0;
     background-color: colors.$primary-color3;
-}
-
-.background--color {
-    background-color: colors.$secondary-color3;
-}
-
-// Styling of h2 headings
-.section__heading {
-    color: colors.$primary-color1;
-    @include mixins.mobile-header;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-
-        @include mixins.tablet {
-            margin-top: 3rem;
-            margin-bottom: 2.25rem;
-            @include mixins.desk-tab-subheader;
-            font-size: 2rem;
-        }
-        @include mixins.desktop {
-            @include mixins.desk-tab-subheader;
-            font-size: 2rem;
-        }
 }
 
 // Navbar styling
@@ -49,20 +32,19 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: colors.$primary-color1;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    @include mixins.mobile-padding;
 
     &__logo {
         padding-top: 1.5rem;
         padding-bottom: 0.5rem;
 
         @include mixins.tablet {
-            padding-right: 1rem;
+            padding-right: 2.25rem;
             padding-bottom: 1rem;
         }
         @include mixins.desktop {
-            padding-left: 3.93rem;
-            padding-right: 1.5rem;
+            // padding-left: 3.93rem;
+            // padding-right: 1.5rem;
         }
     }
 
@@ -98,7 +80,7 @@ body {
 
         @include mixins.tablet {
             padding: 1rem 0 1.35rem 0;
-            margin: 1rem 1.5rem 0rem 1.5rem;
+            margin: 1rem 2.25rem 0rem 2.25rem;
         }
     }
     &__links--inactive {
@@ -118,8 +100,8 @@ body {
         @include mixins.tablet-padding;
     }
     @include mixins.desktop {
-        padding-left: auto;
-        padding-right: auto;
+        padding-left: 5rem;
+        padding-right: 5rem;
     }
 }
 
@@ -154,14 +136,14 @@ body {
         color: colors.$primary-color3;
         margin-top: 0;
         position: relative;
-        padding-left: 1rem;
+        @include mixins.mobile-padding;
 
         @include mixins.tablet {
             @include mixins.desk-tab-pgheader;
-            padding-left: 2.25rem;
+            @include mixins.tablet-padding;
 
             @include mixins.desktop {
-                padding-left: 6.125rem;
+                padding-left: 5rem;
             }
         }
     }
@@ -169,15 +151,14 @@ body {
 
 // // About Band section
 .about {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    @include mixins.mobile-padding;
 
     @include mixins.tablet {
-        margin-left: 2.25rem;
-        margin-right: 2.25rem;
+        @include mixins.tablet-padding;
     }
     @include mixins.desktop {
         @include mixins.desktop-margin;
+        padding: 0;
     }
 
     // About section image
@@ -215,6 +196,23 @@ body {
             font-size: 1.5rem;
         }
     }
+    &__heading {
+        color: colors.$primary-color1;
+        @include mixins.mobile-header;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            margin-top: 3rem;
+            margin-bottom: 2.25rem;
+            @include mixins.desk-tab-subheader;
+            font-size: 2rem;
+        }
+        @include mixins.desktop {
+            @include mixins.desk-tab-subheader;
+            font-size: 2rem;
+        }
+    }
 }
 
 // Band Autobiography
@@ -233,7 +231,7 @@ body {
 
             @include mixins.tablet {
                 @include mixins.desk-tab-subheader;
-                margin-left: 1rem;
+                margin-left: 1.5rem;
                 font-size: 1rem;
         }
     }
@@ -249,8 +247,8 @@ body {
 
             @include mixins.tablet {
                 @include mixins.desk-tab-body;
-                margin-left: 1rem;
-                margin-right: 1rem;
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
             }
         }
     }
@@ -258,9 +256,8 @@ body {
 
 // Photo Gallery
 .gallery {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0.25rem;
+    // padding-top: 1.5rem;
+    background-color: colors.$secondary-color3;
 
     @include mixins.tablet {
         @include mixins.tablet-padding;
@@ -274,28 +271,30 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        @include mixins.mobile-padding;
 
         @include mixins.tablet {
             flex-wrap: wrap;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: space-between;
+            padding-left: 0rem;
+            padding-right: 0rem;
         }  
     }
     &__heading {
         @include mixins.mobile-header;
-        margin-top: 1.5rem;
+        padding-top: 1.5rem;
         margin-bottom: 1rem;
+        margin-top: 0;
+        @include mixins.mobile-padding;
 
         @include mixins.tablet {
-            padding-left: 1.15rem;
             @include mixins.desk-tab-secheader;
-            margin-top: 3rem;
-            margin-bottom: 2.25rem;
-            
+            padding: 3rem 0rem 2.25rem 0rem;
+            margin-bottom: 0;
 
         @include mixins.desktop {
             @include mixins.desk-tab-secheader;
-            padding-left: 2rem;
         }
         }
     }
@@ -305,32 +304,110 @@ body {
         margin-bottom: 1rem;
 
         @include mixins.tablet {
-            width: 30%;
+            width: 31%;
         }
+    }
+}
+
+// Comment Section
+.comment {
+    @include mixins.mobile-padding;
+    padding-top: 1.5rem;
+    // background-color: colors.$primary-color3;
+    background-color: aqua;
+    padding-bottom: 1rem;
+    @include mixins.mobile-padding;
+
+    @include mixins.tablet {
+        @include mixins.tablet-padding;
+        padding-top: 3rem;
+    }
+    @include mixins.desktop {
+        @include mixins.desktop-padding;
+        padding-bottom: 1.5rem
+    }
+    
+
+    &__heading {
+        @include mixins.mobile-headersub;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-bottom: 1rem;
+        color: colors.$primary-color1;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-secheader;
+            padding-bottom: 1.5rem;
+        }
+        @include mixins.desktop {
+            @include mixins.desk-tab-secheader;
+        }
+    }
+    &__sections {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // width: 80%;
+    }
+    &__button {
+        display: flex;
+        height: 2.5rem;
+        // width: fit-content;
+        align-self: center;
+        background-color: colors.$primary-color1;
+        color: colors.$primary-color3;
+        border-radius: 4px;
+        border-style: none;
+        padding-top: 0.75rem;
+        cursor: pointer;
+
+        @include mixins.tablet {
+            align-self: end;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        &:hover {
+            background-color: colors.$secondary-color1;
+        }
+    }
+    &--name {
+        height: 2.25rem;
+        padding-left: 1rem;
+        // Fix border color issue and give border radius
+        margin-bottom: 1rem;
+    }
+    &--comments {
+        padding-left: 1rem;
+        margin-bottom: 1rem
+    }
+    &__title {
+        @include mixins.mobile-headersub;
+        color: colors.$primary-color2;
+        font-weight: 500;
     }
 }
 
 // Footer
 .contact {
     background-color: colors.$primary-color1;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    @include mixins.mobile-padding;
     position: relative;
+    padding-bottom: 1rem;
 
     @include mixins.tablet {
-        padding-left: 3.5rem;
-        padding-right: 3.5rem;
-        padding-top: 2.5rem;
+        @include mixins.tablet-padding;
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
 
     }
     @include mixins.desktop {
-        padding-left: 6.5rem;
-        padding-right: 6.5rem;
+        @include mixins.desktop-padding;
     }
     &__header {
         color: colors.$primary-color3;
         @include mixins.mobile-headersub;
-        padding-top: 1rem;
+        padding-top: 1.5rem;
         padding-bottom: 1rem;
         margin-top: 0;
         margin-bottom: 0;
@@ -360,9 +437,8 @@ body {
             margin-top: 1.25rem;
         }
         &--copyright {
-            padding-bottom: 1rem;
             margin-bottom: 0;
-            font-size: 0.72rem; 
+            font-size: 0.72rem;
         }
     }
     &__logo {
@@ -373,10 +449,10 @@ body {
             position: absolute;
             bottom: 15rem;
             right: 0;
-            margin-right: 4.5rem;
+            margin-right: 2.5rem;
         }
         @include mixins.desktop {
-            margin-right: 6.5rem;
+            margin-right: 5rem;
         }
     }
     &__sections {

@@ -29,43 +29,17 @@
   box-sizing: border-box;
 }
 
+*::-webkit-input-placeholder {
+  color: #000000;
+  font-family: "AvenirNext";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+}
+
 body {
   margin: 0;
   background-color: #FFFFFF;
-}
-
-.background--color {
-  background-color: #FAFAFA;
-}
-
-.section__heading {
-  color: #323232;
-  font-family: "AvenirNext";
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: bold;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .section__heading {
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
-    font-family: "AvenirNext";
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 600;
-    font-size: 2rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .section__heading {
-    font-family: "AvenirNext";
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 600;
-    font-size: 2rem;
-  }
 }
 
 .navigation {
@@ -83,14 +57,8 @@ body {
 }
 @media screen and (min-width: 768px) {
   .navigation__logo {
-    padding-right: 1rem;
+    padding-right: 2.25rem;
     padding-bottom: 1rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .navigation__logo {
-    padding-left: 3.93rem;
-    padding-right: 1.5rem;
   }
 }
 .navigation__img {
@@ -130,7 +98,7 @@ body {
 @media screen and (min-width: 768px) {
   .navigation__links--style {
     padding: 1rem 0 1.35rem 0;
-    margin: 1rem 1.5rem 0rem 1.5rem;
+    margin: 1rem 2.25rem 0rem 2.25rem;
   }
 }
 .navigation__links--inactive {
@@ -153,8 +121,8 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .navigation {
-    padding-left: auto;
-    padding-right: auto;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 
@@ -197,6 +165,7 @@ body {
   margin-top: 0;
   position: relative;
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media screen and (min-width: 768px) {
   .hero__text {
@@ -205,28 +174,30 @@ body {
     line-height: 4.25rem;
     font-weight: bold;
     padding-left: 2.25rem;
+    padding-right: 2.25rem;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1280px) {
   .hero__text {
-    padding-left: 6.125rem;
+    padding-left: 5rem;
   }
 }
 
 .about {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media screen and (min-width: 768px) {
   .about {
-    margin-left: 2.25rem;
-    margin-right: 2.25rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .about {
     margin-left: 5rem;
     margin-right: 5rem;
+    padding: 0;
   }
 }
 .about__img {
@@ -273,6 +244,35 @@ body {
     font-size: 1.5rem;
   }
 }
+.about__heading {
+  color: #323232;
+  font-family: "AvenirNext";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .about__heading {
+    margin-top: 3rem;
+    margin-bottom: 2.25rem;
+    font-family: "AvenirNext";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about__heading {
+    font-family: "AvenirNext";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .autobiography {
@@ -298,7 +298,7 @@ body {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
     font-size: 1rem;
   }
 }
@@ -322,15 +322,13 @@ body {
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 400;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 
 .gallery {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.25rem;
+  background-color: #FAFAFA;
 }
 @media screen and (min-width: 768px) {
   .gallery {
@@ -348,12 +346,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media screen and (min-width: 768px) {
   .gallery__container {
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 }
 .gallery__heading {
@@ -361,18 +363,20 @@ body {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: bold;
-  margin-top: 1.5rem;
+  padding-top: 1.5rem;
   margin-bottom: 1rem;
+  margin-top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media screen and (min-width: 768px) {
   .gallery__heading {
-    padding-left: 1.15rem;
     font-family: "AvenirNext";
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
-    margin-top: 3rem;
-    margin-bottom: 2.25rem;
+    padding: 3rem 0rem 2.25rem 0rem;
+    margin-bottom: 0;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1280px) {
@@ -381,7 +385,6 @@ body {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
-    padding-left: 2rem;
   }
 }
 .gallery__img--sizing {
@@ -390,8 +393,103 @@ body {
 }
 @media screen and (min-width: 768px) {
   .gallery__img--sizing {
-    width: 30%;
+    width: 31%;
   }
+}
+
+.comment {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.5rem;
+  background-color: aqua;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .comment {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    padding-top: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comment {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+.comment__heading {
+  font-family: "AvenirNext";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 1rem;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .comment__heading {
+    font-family: "AvenirNext";
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    padding-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comment__heading {
+    font-family: "AvenirNext";
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+  }
+}
+.comment__sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.comment__button {
+  display: flex;
+  height: 2.5rem;
+  align-self: center;
+  background-color: #323232;
+  color: #FFFFFF;
+  border-radius: 4px;
+  border-style: none;
+  padding-top: 0.75rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .comment__button {
+    align-self: end;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.comment__button:hover {
+  background-color: #000000;
+}
+.comment--name {
+  height: 2.25rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+.comment--comments {
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+.comment__title {
+  font-family: "AvenirNext";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  color: #AFAFAF;
+  font-weight: 500;
 }
 
 .contact {
@@ -399,18 +497,20 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
   position: relative;
+  padding-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
   .contact {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-    padding-top: 2.5rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .contact {
-    padding-left: 6.5rem;
-    padding-right: 6.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 .contact__header {
@@ -419,7 +519,7 @@ body {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   padding-bottom: 1rem;
   margin-top: 0;
   margin-bottom: 0;
@@ -461,7 +561,6 @@ body {
   margin-top: 1.25rem;
 }
 .contact__information--copyright {
-  padding-bottom: 1rem;
   margin-bottom: 0;
   font-size: 0.72rem;
 }
@@ -474,12 +573,12 @@ body {
     position: absolute;
     bottom: 15rem;
     right: 0;
-    margin-right: 4.5rem;
+    margin-right: 2.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .contact__logo {
-    margin-right: 6.5rem;
+    margin-right: 5rem;
   }
 }
 @media screen and (min-width: 768px) {
