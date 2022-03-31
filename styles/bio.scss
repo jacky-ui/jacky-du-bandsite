@@ -321,13 +321,12 @@ body {
     @include mixins.tablet {
         @include mixins.tablet-padding;
         padding-top: 3rem;
+        padding-right: 4rem;
     }
     @include mixins.desktop {
         @include mixins.desktop-padding;
         padding-bottom: 1.5rem
     }
-    
-
     &__heading {
         @include mixins.mobile-headersub;
         font-size: 1.5rem;
@@ -347,20 +346,25 @@ body {
     &__sections {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        // width: 80%;
+        // justify-content: center;
+        width: 80%;
+        margin-left: auto;
+
+        @include mixins.desktop {
+            display: flex;
+            justify-content: center;
+            width: 40%;
+            margin: auto;
+        }
     }
     &__button {
-        display: flex;
         height: 2.5rem;
-        // width: fit-content;
-        align-self: center;
         background-color: colors.$primary-color1;
         color: colors.$primary-color3;
         border-radius: 4px;
         border-style: none;
-        padding-top: 0.75rem;
         cursor: pointer;
+        padding: auto;
 
         @include mixins.tablet {
             align-self: end;
@@ -379,7 +383,10 @@ body {
     }
     &--comments {
         padding-left: 1rem;
-        margin-bottom: 1rem
+        padding-top: 0.75rem;
+        margin-bottom: 1rem;
+        height: 5.6rem;
+        resize: none;
     }
     &__title {
         @include mixins.mobile-headersub;
