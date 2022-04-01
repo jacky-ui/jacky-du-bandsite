@@ -18,6 +18,19 @@
 *::-webkit-input-placeholder {
     color: colors.$secondary-color1;
     @include mixins.mobile-text;
+
+    @include mixins.tablet {
+        @include mixins.desk-tab-body;
+    }
+}
+
+input {
+    @include mixins.mobile-text;
+    color: colors.$secondary-color1;
+
+    @include mixins.tablet {
+        @include mixins.desk-tab-body;
+    }
 }
 
 body {
@@ -313,10 +326,8 @@ body {
 .comment {
     @include mixins.mobile-padding;
     padding-top: 1.5rem;
-    // background-color: colors.$primary-color3;
-    background-color: aqua;
+    background-color: colors.$primary-color3;
     padding-bottom: 1rem;
-    @include mixins.mobile-padding;
 
     @include mixins.tablet {
         @include mixins.tablet-padding;
@@ -346,7 +357,7 @@ body {
     &__sections {
         display: flex;
         flex-direction: column;
-        // justify-content: center;
+        position: relative;
         width: 80%;
         margin-left: auto;
 
@@ -365,11 +376,15 @@ body {
         border-style: none;
         cursor: pointer;
         padding: auto;
+        margin-bottom: 1rem;
+        @include mixins.mobile-labelsbtn;
 
         @include mixins.tablet {
             align-self: end;
             padding-left: 2rem;
             padding-right: 2rem;
+            @include mixins.desk-tab-labelsbtn;
+            padding-bottom: 2.25rem;
         }
         &:hover {
             background-color: colors.$secondary-color1;
@@ -380,6 +395,10 @@ body {
         padding-left: 1rem;
         // Fix border color issue and give border radius
         margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            height: 3rem;
+        }
     }
     &--comments {
         padding-left: 1rem;
@@ -391,7 +410,66 @@ body {
     &__title {
         @include mixins.mobile-headersub;
         color: colors.$primary-color2;
-        font-weight: 500;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-subheader;
+            font-size: 1rem;
+        }
+    }
+}
+
+// Comment and review profile picture
+.profile__img {
+    @include mixins.mobile-profile--sizing;
+    top: 1.35rem;
+    left: -3.2rem;
+
+    @include mixins.tablet {
+        @include mixins.desktab-profile--sizing;
+        top: 1.4rem;
+        left: -4rem;
+    }
+}
+
+.profile__img--color {
+    background-color: colors.$secondary-color2;
+    @include mixins.mobile-profile--sizing;
+    bottom: 7rem;
+    left: -3rem;
+}
+
+// Review section
+.review {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 1rem;
+    border-top: 1px solid colors.$secondary-color2;
+
+    &__heading {
+        @include mixins.mobile-headersub;
+        position: relative;
+
+        @include mixins.tablet {
+        @include mixins.desk-tab-subheader;
+        font-size: 1rem;
+        }
+    }
+    &--date {
+        @include mixins.mobile-text;
+        color: colors.$primary-color2;
+
+        @include mixins.tablet {
+        @include mixins.desk-tab-body;
+        }
+    }
+    &__paragraph {
+        @include mixins.mobile-text;
+        margin-top: 0.5rem;
+
+        @include mixins.tablet {
+        @include mixins.desk-tab-body;
+        }
     }
 }
 

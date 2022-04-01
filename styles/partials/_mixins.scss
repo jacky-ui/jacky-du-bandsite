@@ -23,6 +23,13 @@
     font-weight: normal;
 }
 
+@mixin mobile-labelsbtn {
+    font-family: 'AvenirNext';
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+}
+
 // Font mixins desktop and tablet
 @mixin desk-tab-pgheader {
     font-family: 'AvenirNext';
@@ -115,4 +122,21 @@
 @mixin desktop-margin {
     margin-left: 5rem;
     margin-right: 5rem;
+}
+
+// Comment and Review profile img size
+@mixin mobile-profile--sizing {
+    position: absolute;
+    border-radius: 50%;
+    min-height: 2.25rem;
+    max-height: 2.25rem;
+    min-width: 2.25rem;
+    max-width: 2.25rem;
+}
+
+@mixin desktab-profile--sizing {
+    min-height: 3rem;
+    max-height: 3rem;
+    min-width: 3rem;
+    max-width: 3rem;
 }
