@@ -565,7 +565,7 @@ body {
     max-height: 3rem;
     min-width: 3rem;
     max-width: 3rem;
-    top: 1.4rem;
+    top: 2rem;
     left: -4rem;
   }
 }
@@ -580,6 +580,14 @@ body {
   max-width: 2.25rem;
   bottom: 7rem;
   left: -3rem;
+}
+@media screen and (min-width: 768px) {
+  .profile__img--color {
+    min-height: 3rem;
+    max-height: 3rem;
+    min-width: 3rem;
+    max-width: 3rem;
+  }
 }
 
 .review {

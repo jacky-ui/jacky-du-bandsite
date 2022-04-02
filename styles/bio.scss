@@ -426,7 +426,7 @@ body {
 
     @include mixins.tablet {
         @include mixins.desktab-profile--sizing;
-        top: 1.4rem;
+        top: 2rem;
         left: -4rem;
     }
 }
@@ -436,6 +436,10 @@ body {
     @include mixins.mobile-profile--sizing;
     bottom: 7rem;
     left: -3rem;
+
+    @include mixins.tablet {
+        @include mixins.desktab-profile--sizing;
+    }
 }
 
 // Review section
