@@ -406,6 +406,12 @@ body {
         margin-bottom: 1rem;
         height: 5.6rem;
         resize: none;
+        color: colors.$secondary-color1;
+        @include mixins.mobile-text;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-body;
+        }
     }
     &__title {
         @include mixins.mobile-headersub;
@@ -418,16 +424,21 @@ body {
     }
 }
 
+#formSubmission {
+    width: 100%;
+}
+
 // Comment and review profile picture
 .profile__img {
     @include mixins.mobile-profile--sizing;
-    top: 1.35rem;
     left: -3.2rem;
 
     @include mixins.tablet {
         @include mixins.desktab-profile--sizing;
-        top: 2rem;
         left: -4rem;
+    }
+    @include mixins.tablet {
+        top: 0rem;
     }
 }
 

@@ -1,45 +1,44 @@
 const commentElement = document.querySelector(".comment");
-const commentNameElement = document.createElement("section");
+const commentSections = document.createElement("section");
 const labelTag = document.createElement("label");
 const inputTxt = document.createElement("input");
 const labelTag2 = document.createElement("label");
 const txtArea = document.createElement("textarea");
 
-
 // Create section tag with class
 function makeSection(section, name) {
-    section.classList.add(name);
+    commentSections.classList.add("comment__sections");
     commentElement.appendChild(section);
     return;
 }
+
+// Create form
+const userInput = document.createElement("form");
+userInput.setAttribute("id", "formSubmission");
+userInput.classList.add("comment__sections");
+commentSections.appendChild(userInput);
 
 // Will create other nested tags within the section
 function makeCommentTags(tag, className, txt, attri1, attri2) {
     tag.classList.add(className);
     if (txt == true) tag.innerText = txt; 
     tag.setAttribute(attri1, attri2);
-    commentNameElement.appendChild(tag); 
+    userInput.appendChild(tag); 
     return;
 };
 
 // Create additional attribute to text and text area
 function additionalAttribute(element, attri3, attri4) {
     element.setAttribute(attri3, attri4);
-    commentNameElement.appendChild(element);
+    userInput.appendChild(element);
     return;
 }
 
-// function makeProfilePicture(newUserImg, imgClass, source, path, alt, txt) {
-//     const newUserImg = document.createElement("img");
-//     newUserImg.classList.add(imgClass);
-//     newUserImg.setAttribute(source, path);
-// }
-
-makeSection(commentNameElement, "comment__sections");
+makeSection(commentSections, "comment__sections");
 
 // Name label tag & input
 makeCommentTags(labelTag, "comment__title", "NAME", "for", "name");
-makeCommentTags(inputTxt, "comment--name", "Enter your name", "name", "comments");
+makeCommentTags(inputTxt, "comment--name", "Enter your name", "name", "name");
 additionalAttribute(inputTxt, "type", "text");
 additionalAttribute(inputTxt, "placeholder", "Enter your name");
 
@@ -50,10 +49,41 @@ additionalAttribute(txtArea, "placeholder", "Add a new comment");
 additionalAttribute(txtArea, "id", "comments");
 
 // Add new comment profile picture
+const newUserImg = document.createElement("img");
+newUserImg.classList.add("profile__img");
+newUserImg.setAttribute("src", "./assets/images/Mohan-muruge.jpg");
+newUserImg.setAttribute("alt", "profile icon");
+userInput.appendChild(newUserImg);
 
+// Create submit button
+const submitButton = document.createElement("button");
+submitButton.classList.add("comment__button");
+submitButton.setAttribute("type", "submit");
+submitButton.innerText = "COMMENT";
+userInput.appendChild(submitButton);
 
-// Will allow user tp input review comments and name
+// Take user inut and add to reviews array
+userInput.addEventListener("submit", (event) => {
+    event.preventDefault();
 
+    const nameInput = event.target.name.value;
+    const commentInput = event.target.comments.value;
+    console.log(nameInput);
+    console.log(commentInput);
+
+    const newUserInputs = {
+        name: nameInput,
+        review: commentInput
+    };
+
+    reviews.unshift(newUserInputs);
+    console.log(reviews);
+
+    event.target.reset();
+    return;
+});
+
+// Create band reviews
 const reviews = [
     {
         name: "Connor Walton",
@@ -71,3 +101,63 @@ const reviews = [
         review: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     }
 ];
+
+function createReviews(reiview) {
+    // Create review section
+    const reviewSection = document.createElement("section");
+
+    // Heading and date container
+    const headContainer = document.createElement("div");
+    headContainer.classList.add("review");
+    reviewSection.appendChild(headContainer);
+
+    // Review Name
+    const reviewName = document.createElement("span");
+    reviewName.classList.add("review__heading");
+    // reviewName.innerText = reviews[1].name;
+    headContainer.appendChild(reviewName);
+
+    // Review Date
+    const reviewDate = document.createElement("span");
+    reviewDate.classList.add("review--date");
+    // reviewDate.innerText = reviews[1].date;
+    headContainer.appendChild(reviewDate);
+
+    // Review Paragraph
+    const reviewComments = document.createElement("p");
+    reviewComments.classList.add("review__paragraph");
+    // reviewComments.innerText = reviews[1].review;
+    reviewSection.appendChild(reviewComments);
+
+    for (let i = 0; i < reviews.length; i++) {
+        reviewName.innerText = reviews[i].name;
+        reviewDate.innerText = reviews[i].date;
+        reviewComments.innerText = reviews[i].review;
+    }
+
+    return reviewSection;
+}
+
+for (let i = 0; i < reviews.length; i ++) {
+    const newReview = createReviews(reviews[i]);
+    commentSections.appendChild(newReview);
+}
+
+
+// for (let i = 0; i < reviews.length; i++) {
+//     const newCard = createReviews(reviews[i]);
+//     commentNameElement.appendChild(newCard);
+// }
+
+
+// function createReview(array) {
+//     for (let i = 0; i < array.length; i++) {
+//         let reviewSection = document.createElement("section");
+//         commentElement.appendChild(reviewSection);
+
+//         return reviewSection;
+//     }
+// }
+
+// createReview(reviews);
+// console.log(commentElement);
