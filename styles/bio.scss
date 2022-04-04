@@ -126,7 +126,7 @@ body {
     background-size: cover;
     min-width: 100%;
     max-width: 100%;
-    min-height: 30vh;
+    min-height: 50vh;
     max-height: 60vh;
     position: relative;
     display: flex;
@@ -445,12 +445,18 @@ body {
 .profile__img--color {
     background-color: colors.$secondary-color2;
     @include mixins.mobile-profile--sizing;
-    bottom: 7rem;
+    bottom: 0rem;
+    top: 1rem;
     left: -3rem;
 
     @include mixins.tablet {
         @include mixins.desktab-profile--sizing;
+        left: -4rem;
     }
+}
+
+.profile--positioning {
+    position: relative;
 }
 
 // Review section

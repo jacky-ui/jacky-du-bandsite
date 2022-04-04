@@ -156,7 +156,7 @@ body {
   background-size: cover;
   min-width: 100%;
   max-width: 100%;
-  min-height: 30vh;
+  min-height: 50vh;
   max-height: 60vh;
   position: relative;
   display: flex;
@@ -598,7 +598,8 @@ body {
   max-height: 2.25rem;
   min-width: 2.25rem;
   max-width: 2.25rem;
-  bottom: 7rem;
+  bottom: 0rem;
+  top: 1rem;
   left: -3rem;
 }
 @media screen and (min-width: 768px) {
@@ -607,7 +608,12 @@ body {
     max-height: 3rem;
     min-width: 3rem;
     max-width: 3rem;
+    left: -4rem;
   }
+}
+
+.profile--positioning {
+  position: relative;
 }
 
 .review {

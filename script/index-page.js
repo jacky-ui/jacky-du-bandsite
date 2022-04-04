@@ -1,9 +1,25 @@
+// Declare initial tags
 const commentElement = document.querySelector(".comment");
 const commentSections = document.createElement("section");
 const labelTag = document.createElement("label");
 const inputTxt = document.createElement("input");
 const labelTag2 = document.createElement("label");
 const txtArea = document.createElement("textarea");
+
+// Declare current date, format and add to review array
+const currentSubmitDate = new Date ();
+
+function formatSubmitDate(date) {
+    let year = date.getFullYear();
+
+    let month = (1 + date.getMonth()).toString();
+    month = month.length > 1 ? month: "0" + month;
+
+    let day = date.getDate().toString();
+    day = day.length > 1 ? day: "0" + day;
+
+    return month + "/" + day + "/" + year;
+}
 
 // Create section tag with class
 function makeSection(section, name) {
@@ -34,6 +50,7 @@ function additionalAttribute(element, attri3, attri4) {
     return;
 }
 
+// Passing arguments into functions to create tags in index.html
 makeSection(commentSections, "comment__sections");
 
 // Name label tag & input
@@ -62,26 +79,6 @@ submitButton.setAttribute("type", "submit");
 submitButton.innerText = "COMMENT";
 userInput.appendChild(submitButton);
 
-// Take user inut and add to reviews array
-userInput.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const nameInput = event.target.name.value;
-    const commentInput = event.target.comments.value;
-    console.log(nameInput);
-    console.log(commentInput);
-
-    const newUserInputs = {
-        name: nameInput,
-        review: commentInput
-    };
-
-    reviews.unshift(newUserInputs);
-    console.log(reviews);
-
-    event.target.reset();
-    return;
-});
 
 // Create band reviews
 const reviews = [
@@ -102,9 +99,11 @@ const reviews = [
     }
 ];
 
-function createReviews(reiview) {
+// Take band reviews and create html tags
+function createReviews(review) {
     // Create review section
     const reviewSection = document.createElement("section");
+    reviewSection.classList.add("profile--positioning")
 
     // Heading and date container
     const headContainer = document.createElement("div");
@@ -114,20 +113,22 @@ function createReviews(reiview) {
     // Review Name
     const reviewName = document.createElement("span");
     reviewName.classList.add("review__heading");
-    // reviewName.innerText = reviews[1].name;
     headContainer.appendChild(reviewName);
 
     // Review Date
     const reviewDate = document.createElement("span");
     reviewDate.classList.add("review--date");
-    // reviewDate.innerText = reviews[1].date;
     headContainer.appendChild(reviewDate);
 
     // Review Paragraph
     const reviewComments = document.createElement("p");
     reviewComments.classList.add("review__paragraph");
-    // reviewComments.innerText = reviews[1].review;
     reviewSection.appendChild(reviewComments);
+
+    // Profile Picture
+    const image = document.createElement("div");
+    image.classList.add("profile__img--color");
+    reviewSection.appendChild(image);
 
     for (let i = 0; i < reviews.length; i++) {
         reviewName.innerText = reviews[i].name;
@@ -139,25 +140,41 @@ function createReviews(reiview) {
 }
 
 for (let i = 0; i < reviews.length; i ++) {
-    const newReview = createReviews(reviews[i]);
+    let newReview = createReviews(reviews[i]);
     commentSections.appendChild(newReview);
 }
 
+console.log(reviews);
 
-// for (let i = 0; i < reviews.length; i++) {
-//     const newCard = createReviews(reviews[i]);
-//     commentNameElement.appendChild(newCard);
+
+// Take user inut and add to reviews array
+// function addComments(newComments) {
+//     const addedComments = newComments.map((review) => 
+//         `<li>${newComments}`).join(`\n`);
+//         document.querySelector(".review").innerHTML = noName;
 // }
 
+function displayComments(newComments) {
+    
+}
 
-// function createReview(array) {
-//     for (let i = 0; i < array.length; i++) {
-//         let reviewSection = document.createElement("section");
-//         commentElement.appendChild(reviewSection);
+userInput.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-//         return reviewSection;
-//     }
-// }
+    const nameInput = event.target.name.value;
+    const commentInput = event.target.comments.value;
+    console.log(nameInput);
+    console.log(commentInput);
 
-// createReview(reviews);
-// console.log(commentElement);
+    const newUserInputs = {
+        name: nameInput,
+        date: formatSubmitDate(currentSubmitDate),
+        review: commentInput
+    };
+
+    reviews.unshift(newUserInputs);
+
+    displayComments(newUserInputs);
+    event.target.reset();
+    return;
+});
