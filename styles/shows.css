@@ -197,6 +197,10 @@ body {
     margin-left: 20rem;
   }
 }
+.shows__section:hover {
+  background-color: #FAFAFA;
+  cursor: pointer;
+}
 .shows__header {
   font-family: "AvenirNext";
   font-size: 1.5rem;
@@ -352,10 +356,7 @@ body {
     margin-left: 4rem;
   }
 }
-@media screen and (min-width: 1280px) {
-  .shows__container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
+
+.activeShow {
+  background-color: #AFAFAF;
 }/*# sourceMappingURL=shows.css.map */

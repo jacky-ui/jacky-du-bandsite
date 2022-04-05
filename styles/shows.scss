@@ -141,6 +141,10 @@ body {
             margin-right: auto;
             margin-left: 20rem;
         }
+        &:hover {
+            background-color: colors.$secondary-color3;
+            cursor: pointer;
+        }
     }
     &__header {
         @include mixins.mobile-header;
@@ -251,12 +255,9 @@ body {
             margin-left: 4rem;
         }
     }
-    &__container {
-        @include mixins.desktop {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-    }
+}
+
+.activeShow {
+    background-color: colors.$primary-color2;
 }
 

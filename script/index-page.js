@@ -85,7 +85,7 @@ const reviews = [
     {
         name: "Connor Walton",
         date: "02/17/2021",
-        review: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
+        review: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
     },
     {
         name: "Emilie Beach",
@@ -99,30 +99,28 @@ const reviews = [
     }
 ];
 
-// Take band reviews and create html tags
-function createReviews(review) {
-    // Create review section
+function createReviews(reviesPosted) {
     const reviewSection = document.createElement("section");
-    reviewSection.classList.add("profile--positioning")
+    reviewSection.classList.add("profile--positioning");
 
-    // Heading and date container
     const headContainer = document.createElement("div");
     headContainer.classList.add("review");
     reviewSection.appendChild(headContainer);
 
-    // Review Name
     const reviewName = document.createElement("span");
     reviewName.classList.add("review__heading");
+    reviewName.innerText = reviesPosted.name;
     headContainer.appendChild(reviewName);
 
-    // Review Date
     const reviewDate = document.createElement("span");
     reviewDate.classList.add("review--date");
+    reviewDate.innerHTML = reviesPosted.date;
     headContainer.appendChild(reviewDate);
 
     // Review Paragraph
     const reviewComments = document.createElement("p");
     reviewComments.classList.add("review__paragraph");
+    reviewComments.innerText = reviesPosted.review;
     reviewSection.appendChild(reviewComments);
 
     // Profile Picture
@@ -130,32 +128,12 @@ function createReviews(review) {
     image.classList.add("profile__img--color");
     reviewSection.appendChild(image);
 
-    for (let i = 0; i < reviews.length; i++) {
-        reviewName.innerText = reviews[i].name;
-        reviewDate.innerText = reviews[i].date;
-        reviewComments.innerText = reviews[i].review;
-    }
-
     return reviewSection;
-}
+};
 
-for (let i = 0; i < reviews.length; i ++) {
+for (let i = 0; i < reviews.length; i++) {
     let newReview = createReviews(reviews[i]);
     commentSections.appendChild(newReview);
-}
-
-console.log(reviews);
-
-
-// Take user inut and add to reviews array
-// function addComments(newComments) {
-//     const addedComments = newComments.map((review) => 
-//         `<li>${newComments}`).join(`\n`);
-//         document.querySelector(".review").innerHTML = noName;
-// }
-
-function displayComments(newComments) {
-    
 }
 
 userInput.addEventListener("submit", (event) => {
@@ -163,8 +141,6 @@ userInput.addEventListener("submit", (event) => {
 
     const nameInput = event.target.name.value;
     const commentInput = event.target.comments.value;
-    console.log(nameInput);
-    console.log(commentInput);
 
     const newUserInputs = {
         name: nameInput,
@@ -172,9 +148,6 @@ userInput.addEventListener("submit", (event) => {
         review: commentInput
     };
 
-    reviews.unshift(newUserInputs);
-
-    displayComments(newUserInputs);
+    commentSections.append(createReviews(newUserInputs));
     event.target.reset();
-    return;
 });
