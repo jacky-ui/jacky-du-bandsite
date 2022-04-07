@@ -19,21 +19,6 @@
   font-style: normal;
   font-display: swap;
 }
-* {
-  box-sizing: border-box;
-}
-*::before {
-  box-sizing: border-box;
-}
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background-color: #FFFFFF;
-}
-
 .hero__shows {
   background-image: url(../assets/images/hero-shows.jpg);
   background-position: center;
