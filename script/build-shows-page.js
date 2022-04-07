@@ -1,4 +1,5 @@
 const mainContainer = document.querySelector(".shows");
+const activeSelected = document.querySelector(".shows__section");
 
 // create div
 const sectionContainers = document.createElement("div");
@@ -104,7 +105,6 @@ for (let i = 0; i < showTimes.length; i++) {
     sectionContainers.appendChild(showCreate);
 };
 
-const activeSelected = document.querySelector(".shows__section");
 
 activeSelected.addEventListener("click", (event) => {
     activeSelected.classList.add("activeShow");

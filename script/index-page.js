@@ -6,6 +6,41 @@ const inputTxt = document.createElement("input");
 const labelTag2 = document.createElement("label");
 const txtArea = document.createElement("textarea");
 
+// Create section tag with class
+function makeSection(section, name) {
+    commentSections.classList.add("comment__sections");
+    commentElement.appendChild(section);
+    return;
+}
+
+// Create form
+const userInput = document.createElement("form");
+userInput.setAttribute("id", "formSubmission");
+userInput.classList.add("comment__sections");
+commentSections.appendChild(userInput);
+
+const commentContainer = document.createElement("section");
+commentSections.appendChild(commentContainer);
+
+// Create band reviews
+let reviews = [
+    {
+        name: "Connor Walton",
+        date: "02/17/2021",
+        review: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+    },
+    {
+        name: "Emilie Beach",
+        date: "01/09/2021",
+        review: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+    },
+    {
+        name: "Miles Acosta",
+        date: "12/20/2020",
+        review: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+    }
+];
+
 // Declare current date, format and add to review array
 const currentSubmitDate = new Date ();
 
@@ -20,19 +55,6 @@ function formatSubmitDate(date) {
 
     return month + "/" + day + "/" + year;
 }
-
-// Create section tag with class
-function makeSection(section, name) {
-    commentSections.classList.add("comment__sections");
-    commentElement.appendChild(section);
-    return;
-}
-
-// Create form
-const userInput = document.createElement("form");
-userInput.setAttribute("id", "formSubmission");
-userInput.classList.add("comment__sections");
-commentSections.appendChild(userInput);
 
 // Will create other nested tags within the section
 function makeCommentTags(tag, className, txt, attri1, attri2) {
@@ -65,6 +87,7 @@ makeCommentTags(txtArea, "comment--comments", " ", "name", "comments");
 additionalAttribute(txtArea, "placeholder", "Add a new comment");
 additionalAttribute(txtArea, "id", "comments");
 
+// Maybe make a setTimeout to make this generated after the top. This will fix the button being created first. Maybe look into creating function
 // Add new comment profile picture
 const newUserImg = document.createElement("img");
 newUserImg.classList.add("profile__img");
@@ -80,25 +103,8 @@ submitButton.innerText = "COMMENT";
 userInput.appendChild(submitButton);
 
 
-// Create band reviews
-const reviews = [
-    {
-        name: "Connor Walton",
-        date: "02/17/2021",
-        review: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    },
-    {
-        name: "Emilie Beach",
-        date: "01/09/2021",
-        review: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    },
-    {
-        name: "Miles Acosta",
-        date: "12/20/2020",
-        review: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    }
-];
 
+// Function will take review array as argument and create elements on HTML
 function createReviews(reviesPosted) {
     const reviewSection = document.createElement("section");
     reviewSection.classList.add("profile--positioning");
@@ -114,7 +120,7 @@ function createReviews(reviesPosted) {
 
     const reviewDate = document.createElement("span");
     reviewDate.classList.add("review--date");
-    reviewDate.innerHTML = reviesPosted.date;
+    reviewDate.innerText = reviesPosted.date;
     headContainer.appendChild(reviewDate);
 
     // Review Paragraph
@@ -133,7 +139,7 @@ function createReviews(reviesPosted) {
 
 for (let i = 0; i < reviews.length; i++) {
     let newReview = createReviews(reviews[i]);
-    commentSections.appendChild(newReview);
+    commentContainer.appendChild(newReview);
 }
 
 userInput.addEventListener("submit", (event) => {
@@ -142,12 +148,14 @@ userInput.addEventListener("submit", (event) => {
     const nameInput = event.target.name.value;
     const commentInput = event.target.comments.value;
 
-    const newUserInputs = {
+    let newUserInputs = {
         name: nameInput,
         date: formatSubmitDate(currentSubmitDate),
         review: commentInput
     };
 
-    commentSections.append(createReviews(newUserInputs));
+    reviews.push(newUserInputs);
+    console.log(reviews);
+    commentContainer.prepend(createReviews(newUserInputs));
     event.target.reset();
 });
