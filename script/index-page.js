@@ -155,7 +155,7 @@ userInput.addEventListener("submit", (event) => {
     };
 
     reviews.push(newUserInputs);
-    console.log(reviews);
     commentContainer.prepend(createReviews(newUserInputs));
     event.target.reset();
+    return reviews;
 });

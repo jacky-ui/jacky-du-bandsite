@@ -1,5 +1,5 @@
 const mainContainer = document.querySelector(".shows");
-const activeSelected = document.querySelector(".shows__section");
+// const activeSelected = document.querySelector(".shows__section");
 
 // create div
 const sectionContainers = document.createElement("div");
@@ -105,7 +105,26 @@ for (let i = 0; i < showTimes.length; i++) {
     sectionContainers.appendChild(showCreate);
 };
 
+const activeSelected = document.querySelectorAll(".shows__section");
+
+
+// const delayCreation = setTimeout(function () {
+//     const activeSelected = document.querySelectorAll(".shows__section");
+//     console.log(activeSelected)
+//     return activeSelected;
+// },3000);
+
+// activeSelected.addEventListener("click", (event) =>{
+//     activeSelected.classList.add(".activeshow");
+// });
+
+// mainContainer.addEventListener("click", function(e) {
+//     if(e.target && e.target.matches("section.shows__section")) {
+//         activeSelected.classList.add("activeShow");
+//     }
+// })
 
 activeSelected.addEventListener("click", (event) => {
     activeSelected.classList.add("activeShow");
+    // activeSelected.classList.remove.toggle;
 });
