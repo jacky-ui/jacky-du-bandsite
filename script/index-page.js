@@ -1,5 +1,52 @@
 // Website or API https://project-1-api.herokuapp.com/
 const API_KEY = "d7a62256-2579-452c-ab0f-cd64c67a0d19";
+const apiWebsite = "https://project-1-api.herokuapp.com/";
+
+// // Testing axios
+// axios
+//     .get(apiWebsite + "comments/?api_key=" + API_KEY)
+//     .then((response) => {
+//         console.log(response);
+//         const personReviews = response.data;
+        
+//         personReviews.forEach( (personReview) => {
+//             const reviewSection = document.createElement("section");
+//             reviewSection.classList.add("profile--positioning");
+//             commentSections.appendChild(reviewSection);
+            
+//             const headContainer = document.createElement("div");
+//             headContainer.classList.add("review");
+//             reviewSection.appendChild(headContainer);
+
+//             // Review Name
+//             const reviewName = document.createElement("span");
+//             reviewName.classList.add("review__heading");
+//             reviewName.innerText = review.name;
+//             headContainer.appendChild(reviewName);
+
+//             // Review Date
+//             const reviewDate = document.createElement("span");
+//             reviewDate.classList.add("review--date");
+//             reviewDate.innerText = review.date;
+//             headContainer.appendChild(reviewDate);
+
+//             // Review Paragraph
+//             const reviewComments = document.createElement("p");
+//             reviewComments.classList.add("review__paragraph");
+//             reviewComments.innerText = review.review;
+//             reviewSection.appendChild(reviewComments);
+
+//             // Profile Picture
+//             const image = document.createElement("div");
+//             image.classList.add("profile__img--color");
+//             reviewSection.appendChild(image);
+
+//             return reviewSection;
+//         });
+//     }
+// );
+
+
 
 // Declare initial tags
 const commentElement = document.querySelector(".comment");
@@ -26,23 +73,24 @@ const commentContainer = document.createElement("section");
 commentSections.appendChild(commentContainer);
 
 // Create band reviews
-let reviews = [
-    {
-        name: "Connor Walton",
-        date: "02/17/2021",
-        review: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    },
-    {
-        name: "Emilie Beach",
-        date: "01/09/2021",
-        review: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    },
-    {
-        name: "Miles Acosta",
-        date: "12/20/2020",
-        review: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    }
-];
+let reviews = [];
+// let reviews = [
+//     {
+//         name: "Connor Walton",
+//         date: "02/17/2021",
+//         review: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//     },
+//     {
+//         name: "Emilie Beach",
+//         date: "01/09/2021",
+//         review: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//     },
+//     {
+//         name: "Miles Acosta",
+//         date: "12/20/2020",
+//         review: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//     }
+// ];
 
 // Declare current date, format and add to review array
 const currentSubmitDate = new Date ();
@@ -106,60 +154,60 @@ submitButton.innerText = "COMMENT";
 userInput.appendChild(submitButton);
 
 // Function will take review array as argument and create elements on HTML
-function createReviews(reviesPosted) {
-    const reviewSection = document.createElement("section");
-    reviewSection.classList.add("profile--positioning");
+// function createReviews(reviesPosted) {
+//     const reviewSection = document.createElement("section");
+//     reviewSection.classList.add("profile--positioning");
 
-    const headContainer = document.createElement("div");
-    headContainer.classList.add("review");
-    reviewSection.appendChild(headContainer);
+//     const headContainer = document.createElement("div");
+//     headContainer.classList.add("review");
+//     reviewSection.appendChild(headContainer);
 
-    const reviewName = document.createElement("span");
-    reviewName.classList.add("review__heading");
-    reviewName.innerText = reviesPosted.name;
-    headContainer.appendChild(reviewName);
+//     const reviewName = document.createElement("span");
+//     reviewName.classList.add("review__heading");
+//     reviewName.innerText = reviesPosted.name;
+//     headContainer.appendChild(reviewName);
 
-    const reviewDate = document.createElement("span");
-    reviewDate.classList.add("review--date");
-    reviewDate.innerText = reviesPosted.date;
-    headContainer.appendChild(reviewDate);
+//     const reviewDate = document.createElement("span");
+//     reviewDate.classList.add("review--date");
+//     reviewDate.innerText = reviesPosted.date;
+//     headContainer.appendChild(reviewDate);
 
-    // Review Paragraph
-    const reviewComments = document.createElement("p");
-    reviewComments.classList.add("review__paragraph");
-    reviewComments.innerText = reviesPosted.review;
-    reviewSection.appendChild(reviewComments);
+//     // Review Paragraph
+//     const reviewComments = document.createElement("p");
+//     reviewComments.classList.add("review__paragraph");
+//     reviewComments.innerText = reviesPosted.review;
+//     reviewSection.appendChild(reviewComments);
 
-    // Profile Picture
-    const image = document.createElement("div");
-    image.classList.add("profile__img--color");
-    reviewSection.appendChild(image);
+//     // Profile Picture
+//     const image = document.createElement("div");
+//     image.classList.add("profile__img--color");
+//     reviewSection.appendChild(image);
 
-    return reviewSection;
-};
+//     return reviewSection;
+// };
 
-for (let i = 0; i < reviews.length; i++) {
-    let newReview = createReviews(reviews[i]);
-    commentContainer.appendChild(newReview);
-}
+// for (let i = 0; i < reviews.length; i++) {
+//     let newReview = createReviews(reviews[i]);
+//     commentContainer.appendChild(newReview);
+// }
 
-userInput.addEventListener("submit", (event) => {
-    event.preventDefault();
+// userInput.addEventListener("submit", (event) => {
+//     event.preventDefault();
 
-    const nameInput = event.target.name.value;
-    const commentInput = event.target.comments.value;
+//     const nameInput = event.target.name.value;
+//     const commentInput = event.target.comments.value;
 
-    let newUserInputs = {
-        name: nameInput,
-        date: formatSubmitDate(currentSubmitDate),
-        review: commentInput
-    };
+//     let newUserInputs = {
+//         name: nameInput,
+//         date: formatSubmitDate(currentSubmitDate),
+//         review: commentInput
+//     };
 
-    reviews.push(newUserInputs);
-    commentContainer.prepend(createReviews(newUserInputs));
-    event.target.reset();
-    return reviews;
-});
+//     reviews.push(newUserInputs);
+//     commentContainer.prepend(createReviews(newUserInputs));
+//     event.target.reset();
+//     return reviews;
+// });
 
 // If I were to use forEach
 // reviews.forEach( (review) => {
@@ -196,3 +244,126 @@ userInput.addEventListener("submit", (event) => {
 
 //     return reviewSection;
 // });
+
+// Get comments from api and display on webpage
+function displayComments() {
+    axios
+    .get(apiWebsite + "comments/?api_key=" + API_KEY)
+    .then((response) => {
+        reviews = (response.data);
+
+        // Each review is nested into one of these section tags. This should prevent duplicates if displayComments was called twice
+
+        reviews.forEach( (review) => {
+            const reviewSection = document.createElement("section");
+            reviewSection.classList.add("profile--positioning");
+            commentSections.appendChild(reviewSection);
+            
+            const headContainer = document.createElement("div");
+            headContainer.classList.add("review");
+            reviewSection.appendChild(headContainer);
+
+            // Review Name
+            const reviewName = document.createElement("span");
+            reviewName.classList.add("review__heading");
+            reviewName.innerText = review.name;
+            headContainer.appendChild(reviewName);
+
+            // Review Date
+            const reviewDate = document.createElement("span");
+            reviewDate.classList.add("review--date");
+            reviewDate.innerText = review.timestamp;
+            headContainer.appendChild(reviewDate);
+
+            // Review Paragraph
+            const reviewComments = document.createElement("p");
+            reviewComments.classList.add("review__paragraph");
+            reviewComments.innerText = review.comment;
+            reviewSection.appendChild(reviewComments);
+
+            // Profile Picture
+            const image = document.createElement("div");
+            image.classList.add("profile__img--color");
+            reviewSection.appendChild(image);
+        });
+    });
+};
+
+displayComments();
+
+// axios
+//     .get(apiWebsite + "comments/?api_key=" + API_KEY)
+//     .then((response) => {
+//         console.log(response);
+//         personReviews = response.data;
+//         console.log(personReviews);
+        
+//         personReviews.forEach( (personReview) => {
+//             const reviewSection = document.createElement("section");
+//             reviewSection.classList.add("profile--positioning");
+//             commentSections.appendChild(reviewSection);
+            
+//             const headContainer = document.createElement("div");
+//             headContainer.classList.add("review");
+//             reviewSection.appendChild(headContainer);
+
+//             // Review Name
+//             const reviewName = document.createElement("span");
+//             reviewName.classList.add("review__heading");
+//             reviewName.innerText = personReview.name;
+//             headContainer.appendChild(reviewName);
+
+//             // Review Date
+//             const reviewDate = document.createElement("span");
+//             reviewDate.classList.add("review--date");
+//             reviewDate.innerText = personReview.timestamp;
+//             headContainer.appendChild(reviewDate);
+
+//             // Review Paragraph
+//             const reviewComments = document.createElement("p");
+//             reviewComments.classList.add("review__paragraph");
+//             reviewComments.innerText = personReview.comment;
+//             reviewSection.appendChild(reviewComments);
+
+//             // Profile Picture
+//             const image = document.createElement("div");
+//             image.classList.add("profile__img--color");
+//             reviewSection.appendChild(image);
+
+//             return reviewSection;
+//         });
+//     }
+// );
+
+// Will take user inputs, post to api and display on page
+
+userInput.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nameInput = event.target.name.value;
+    const commentInput = event.target.comments.value;
+
+    let newUserInputs = {
+        name: nameInput,
+        date: formatSubmitDate(currentSubmitDate),
+        review: commentInput
+    };
+
+    axios
+        .post(apiWebsite + "comments/?api_key=" + API_KEY, {
+            name: nameInput,
+            date: formatSubmitDate(currentSubmitDate),
+            review: commentInput
+        }) 
+
+    reviews.push(newUserInputs);
+    commentContainer.prepend(createReviews(newUserInputs));
+    event.target.reset();
+    return reviews;
+});
+
+// axios
+//         .post(apiWebsite + "comments/?api_key=" + API_KEY, {
+//             question: "hello",
+//             date: "Today"
+//         });

@@ -2,7 +2,6 @@
 const API_KEY = "d7a62256-2579-452c-ab0f-cd64c67a0d19";
 
 const mainContainer = document.querySelector(".shows");
-// // const activeSelected = document.querySelector(".shows__section");
 
 // create div
 const sectionContainers = document.createElement("div");
@@ -151,8 +150,6 @@ showTimes.forEach( (showTime) => {
 //     sectionContainers.appendChild(showCreate);
 // };
 
-// const activeSelected = document.querySelectorAll(".shows__section");
-
 
 // const delayCreation = setTimeout(function () {
 //     const activeSelected = document.querySelectorAll(".shows__section");
@@ -164,6 +161,13 @@ showTimes.forEach( (showTime) => {
 //     activeSelected.classList.add(".activeshow");
 // });
 
+
+// const activeSelected = document.querySelector(".shows__section");
+
+// setTimeout(function () {
+//     console.log(activeSelected);
+// }, 3000);
+
 // mainContainer.addEventListener("click", function(e) {
 //     if(e.target && e.target.matches("section.shows__section")) {
 //         activeSelected.classList.add("activeShow");
@@ -172,5 +176,6 @@ showTimes.forEach( (showTime) => {
 
 // activeSelected.addEventListener("click", (event) => {
 //     activeSelected.classList.add("activeShow");
+//     console.log(event);
 //     // activeSelected.classList.remove.toggle;
 // });
