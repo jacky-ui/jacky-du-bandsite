@@ -251,6 +251,11 @@ function displayComments() {
     .get(apiWebsite + "comments/?api_key=" + API_KEY)
     .then((response) => {
         reviews = (response.data);
+        // console.log(reviews[1].timestamp);
+
+        for (let i = 0; i < reviews.length; i++) {
+            reviews[i].timestamp =new Date(reviews[i].timestamp).toLocaleDateString();
+        }
 
         // Each review is nested into one of these section tags. This should prevent duplicates if displayComments was called twice
 
