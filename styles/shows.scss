@@ -97,7 +97,6 @@
 }
 
 // Show Times
-
 .shows {
     @include mixins.mobile-padding;
     color: colors.$primary-color3;
@@ -121,10 +120,10 @@
             flex-direction: row;
             padding-bottom: 1rem;
         }
-        @include mixins.desktop {
-            margin-right: auto;
-            margin-left: 20rem;
-        }
+        // @include mixins.desktop {
+        //     margin-right: auto;
+        //     margin-left: 20rem;
+        // }
         &:hover {
             background-color: colors.$secondary-color3;
             cursor: pointer;
@@ -158,13 +157,12 @@
             padding-bottom: 1.25rem;
         }
         @include mixins.desktop {
-            margin-left: auto;
-            margin-right: 12rem;
+            margin-bottom: 0rem;
+            padding-bottom: 0rem;
         }
-        &--margin {
-            @include mixins.desktop {
-                margin-right: auto;
-                margin-left: 9rem;
+        &--hidden {
+            @include mixins.tablet {
+                visibility: hidden;
             }
         }
     }
@@ -175,29 +173,13 @@
         @include mixins.tablet {
             @include mixins.desk-tab-body;
             align-self: end;
-            margin-right: auto;
-            margin-left: -3.5rem;
+            // margin-right: auto;
+            // margin-left: -3.5rem;
         }
         @include mixins.desktop {
             margin-top: auto;
             margin-bottom: 0.5rem;
         }
-        &--margin {
-            @include mixins.tablet {
-                margin-left: -5.2rem;
-            }
-            @include mixins.desktop {
-                margin-right: auto;
-                margin-left: -5.2rem;
-            }
-        }
-        &--venue {
-            @include mixins.desktop {
-                margin-right: auto;
-                margin-left: 9rem;
-            }
-        }
-
         &--bold {
             color: colors.$secondary-color1;
             @include mixins.mobile-text;
@@ -210,9 +192,9 @@
                 margin-right: auto;
                 margin-left: -2.5rem;
             }
-            @include mixins.desktop {
-                margin: 3rem auto auto -14.5rem;
-            }
+            // @include mixins.desktop {
+            //     margin: 3rem auto auto -14.5rem;
+            // }
         }
     }
     &__button {
@@ -233,6 +215,7 @@
             padding-right: 1.5rem;
             margin-bottom: auto;
             margin-top: 2rem;
+            margin-left: 1rem;
         }
         @include mixins.desktop {
             margin-right: auto;
@@ -245,3 +228,10 @@
     background-color: colors.$primary-color2;
 }
 
+.shows__container {
+    @include mixins.desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: self-end;
+    }
+}

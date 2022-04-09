@@ -1,3 +1,6 @@
+// Website or API https://project-1-api.herokuapp.com/
+const API_KEY = "d7a62256-2579-452c-ab0f-cd64c67a0d19";
+
 // Declare initial tags
 const commentElement = document.querySelector(".comment");
 const commentSections = document.createElement("section");
@@ -102,8 +105,6 @@ submitButton.setAttribute("type", "submit");
 submitButton.innerText = "COMMENT";
 userInput.appendChild(submitButton);
 
-
-
 // Function will take review array as argument and create elements on HTML
 function createReviews(reviesPosted) {
     const reviewSection = document.createElement("section");
@@ -159,3 +160,39 @@ userInput.addEventListener("submit", (event) => {
     event.target.reset();
     return reviews;
 });
+
+// If I were to use forEach
+// reviews.forEach( (review) => {
+//     const reviewSection = document.createElement("section");
+//     reviewSection.classList.add("profile--positioning");
+//     commentSections.appendChild(reviewSection);
+    
+//     const headContainer = document.createElement("div");
+//     headContainer.classList.add("review");
+//     reviewSection.appendChild(headContainer);
+
+//     // Review Name
+//     const reviewName = document.createElement("span");
+//     reviewName.classList.add("review__heading");
+//     reviewName.innerText = review.name;
+//     headContainer.appendChild(reviewName);
+
+//     // Review Date
+//     const reviewDate = document.createElement("span");
+//     reviewDate.classList.add("review--date");
+//     reviewDate.innerText = review.date;
+//     headContainer.appendChild(reviewDate);
+
+//     // Review Paragraph
+//     const reviewComments = document.createElement("p");
+//     reviewComments.classList.add("review__paragraph");
+//     reviewComments.innerText = review.review;
+//     reviewSection.appendChild(reviewComments);
+
+//     // Profile Picture
+//     const image = document.createElement("div");
+//     image.classList.add("profile__img--color");
+//     reviewSection.appendChild(image);
+
+//     return reviewSection;
+// });
