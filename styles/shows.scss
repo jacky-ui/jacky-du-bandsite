@@ -162,15 +162,6 @@
             padding-bottom: 0rem;
             // position: static;
         }
-        &--hidden {
-            @include mixins.tablet {
-                visibility: hidden;
-                position: absolute;
-            }
-            @include mixins.desktop {
-                // position: static;
-            }
-        }
         &--venue {
             @include mixins.tablet {
                 position: absolute;
@@ -191,6 +182,15 @@
             @include mixins.desktop {
                 // position: static;
                 right: 29%;
+            }
+        }
+        &--hidden {
+            @include mixins.tablet {
+                visibility: hidden;
+                position: absolute;
+            }
+            @include mixins.desktop {
+                // position: static;
             }
         }
     }

@@ -238,12 +238,6 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .shows__details--hidden {
-    visibility: hidden;
-    position: absolute;
-  }
-}
-@media screen and (min-width: 768px) {
   .shows__details--venue {
     position: absolute;
     left: 30%;
@@ -265,6 +259,12 @@
 @media screen and (min-width: 1280px) {
   .shows__details--location {
     right: 29%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows__details--hidden {
+    visibility: hidden;
+    position: absolute;
   }
 }
 .shows__description {
