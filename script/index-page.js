@@ -62,6 +62,10 @@ makeCommentTags(txtArea, "comment--comments", " ", "name", "comments");
 additionalAttribute(txtArea, "placeholder", "Add a new comment");
 additionalAttribute(txtArea, "id", "comments");
 
+// Will make sure user cannot submit without typing
+inputTxt.setAttribute("required", " ");
+txtArea.setAttribute("required", " ");
+
 // Maybe make a setTimeout to make this generated after the top. This will fix the button being created first. Maybe look into creating function
 // Add new comment profile picture
 const newUserImg = document.createElement("img");
@@ -140,8 +144,6 @@ userInput.addEventListener("submit", (event) => {
 
     const nameInput = event.target.name.value;
     const commentInput = event.target.comments.value;
-    console.log(nameInput);
-    console.log(commentInput);
 
     axios
         .post(apiWebsite + "comments/?api_key=" + API_KEY, {
@@ -158,7 +160,7 @@ userInput.addEventListener("submit", (event) => {
         .get(apiWebsite + "comments/?api_key=" + API_KEY)
         .then((response) => {
             reviews = (response.data);
-            displayComments();
+            commentContainer.prepend(displayComments());
     });
     event.target.reset();
 });
@@ -297,4 +299,30 @@ userInput.addEventListener("submit", (event) => {
 //     commentContainer.prepend(createReviews(newUserInputs));
 //     event.target.reset();
 //     return reviews;
+// });
+
+// Will take user inputs, post to api and display on page --BEGIN
+// userInput.addEventListener("submit", (event) => {
+//     event.preventDefault();
+
+//     const nameInput = event.target.name.value;
+//     const commentInput = event.target.comments.value;
+
+    // let newUserInputs = {
+    //     name: nameInput,
+    //     date: formatSubmitDate(currentSubmitDate),
+    //     review: commentInput
+    // };
+
+    // axios
+    //     .post(apiWebsite + "comments/?api_key=" + API_KEY, {
+    //         name: nameInput,
+    //         date: formatSubmitDate(currentSubmitDate),
+    //         review: commentInput
+    //     });
+
+    // reviews.push(newUserInputs);
+    // commentContainer.prepend(createReviews(newUserInputs));
+    // event.target.reset();
+    // return reviews;
 // });
