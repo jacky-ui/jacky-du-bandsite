@@ -82,11 +82,11 @@ submitButton.innerText = "COMMENT";
 userInput.appendChild(submitButton);
 // -- ENDS
 
-
+const reviewSection = document.createElement("section");
 // fuction that will create reviews from apiWebsite/comment when invoked --BEGIN
 function displayComments() {
 
-
+    reviewSection.innerText = "";
     // For every timestamp in the array it will convert to MM/DD/YYYY
     for (let i = 0; i < reviews.length; i++) {
             reviews[i].timestamp =new Date(reviews[i].timestamp).toLocaleDateString();
@@ -94,7 +94,7 @@ function displayComments() {
 
         // Will loop through every item in the array to create and append to HTML
         reviews.forEach( (review) => {
-            const reviewSection = document.createElement("section");
+            // const reviewSection = document.createElement("section");
             reviewSection.classList.add("profile--positioning");
             commentSections.appendChild(reviewSection);
             
@@ -160,7 +160,6 @@ userInput.addEventListener("submit", (event) => {
         .get(apiWebsite + "comments/?api_key=" + API_KEY)
         .then((response) => {
             reviews = (response.data);
-            commentContainer.prepend(displayComments());
     });
     event.target.reset();
 });
