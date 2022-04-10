@@ -177,6 +177,11 @@
     gap: 1rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows__section {
+    width: 72%;
+  }
+}
 .shows__section:hover {
   background-color: #FAFAFA;
   cursor: pointer;
@@ -245,11 +250,21 @@
     right: auto;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows__details--venue {
+    left: 47.5%;
+  }
+}
 @media screen and (min-width: 768px) {
   .shows__details--location {
     position: absolute;
     left: auto;
     right: 35%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__details--location {
+    right: 29%;
   }
 }
 .shows__description {
@@ -292,6 +307,11 @@
     align-self: end;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows__description--bold {
+    margin-bottom: 0.5rem;
+  }
+}
 .shows__button {
   height: 2.5rem;
   background-color: #323232;
@@ -322,7 +342,7 @@
 }
 @media screen and (min-width: 1280px) {
   .shows__button {
-    margin-right: auto;
+    margin-right: 1rem;
     margin-left: 4rem;
   }
 }
