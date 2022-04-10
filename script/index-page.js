@@ -9,6 +9,7 @@ const labelTag = document.createElement("label");
 const inputTxt = document.createElement("input");
 const labelTag2 = document.createElement("label");
 const txtArea = document.createElement("textarea");
+const reviewSection = document.createElement("section");
 
 // Declare empty array which comments from apiWebsite will be passed into
 let reviews = [];
@@ -82,7 +83,6 @@ submitButton.innerText = "COMMENT";
 userInput.appendChild(submitButton);
 // -- ENDS
 
-const reviewSection = document.createElement("section");
 // fuction that will create reviews from apiWebsite/comment when invoked --BEGIN
 function displayComments() {
 
@@ -94,7 +94,6 @@ function displayComments() {
 
         // Will loop through every item in the array to create and append to HTML
         reviews.forEach( (review) => {
-            // const reviewSection = document.createElement("section");
             reviewSection.classList.add("profile--positioning");
             commentSections.appendChild(reviewSection);
             
@@ -156,49 +155,10 @@ userInput.addEventListener("submit", (event) => {
                 reviews = (response.data);
                 displayComments();
         });
-        // return axios
-        //     .get(apiWebsite + "comments/?api_key=" + API_KEY)
-        //     .then((response) => {
-        //         reviews = (response.data);
-        //         displayComments();
-        //     });
-    // axios
-    //     .get(apiWebsite + "comments/?api_key=" + API_KEY)
-    //     .then((response) => {
-    //         reviews = (response.data);
-    // });
     });
     event.target.reset();
 });
 // --END
-
-// Will take user inputs, post to api and display on page --BEGIN
-// userInput.addEventListener("submit", (event) => {
-//     event.preventDefault();
-
-//     const nameInput = event.target.name.value;
-//     const commentInput = event.target.comments.value;
-
-    // let newUserInputs = {
-    //     name: nameInput,
-    //     date: formatSubmitDate(currentSubmitDate),
-    //     review: commentInput
-    // };
-
-    // axios
-    //     .post(apiWebsite + "comments/?api_key=" + API_KEY, {
-    //         name: nameInput,
-    //         date: formatSubmitDate(currentSubmitDate),
-    //         review: commentInput
-    //     });
-
-    // reviews.push(newUserInputs);
-    // commentContainer.prepend(createReviews(newUserInputs));
-    // event.target.reset();
-    // return reviews;
-// });
-// --ENDS
-
 
 
 // Archived codes from sprint-2 

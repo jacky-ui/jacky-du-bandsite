@@ -119,6 +119,7 @@
         @include mixins.tablet {
             flex-direction: row;
             padding-bottom: 1rem;
+            gap: 1rem;
         }
         // @include mixins.desktop {
         //     margin-right: auto;
@@ -155,6 +156,7 @@
             @include mixins.desk-tab-subheader;
             font-size: 1rem;
             padding-bottom: 1.25rem;
+            position: absolute;
         }
         @include mixins.desktop {
             margin-bottom: 0rem;
@@ -163,6 +165,21 @@
         &--hidden {
             @include mixins.tablet {
                 visibility: hidden;
+                position: absolute;
+            }
+        }
+        &--venue {
+            @include mixins.tablet {
+                position: absolute;
+                left: 30%;
+                right: auto;
+            }
+        }
+        &--location {
+            @include mixins.tablet {
+                position: absolute;
+                left: auto;
+                right: 35%;
             }
         }
     }
@@ -189,8 +206,8 @@
                 @include mixins.desk-tab-body;
                 font-weight: bold;
                 align-self: end;
-                margin-right: auto;
-                margin-left: -2.5rem;
+                // margin-right: auto;
+                // margin-left: -2.5rem;
             }
             // @include mixins.desktop {
             //     margin: 3rem auto auto -14.5rem;
@@ -229,6 +246,9 @@
 }
 
 .shows__container {
+    @include mixins.tablet {
+        position: relative;
+    }
     @include mixins.desktop {
         display: flex;
         flex-direction: column;
