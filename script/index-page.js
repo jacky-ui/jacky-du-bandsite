@@ -149,6 +149,12 @@ userInput.addEventListener("submit", (event) => {
         .post(apiWebsite + "comments/?api_key=" + API_KEY, {
             'name': nameInput,
             'comment': commentInput,
+        })
+        .then(() => {
+            axios.get(apiWebsite + "comments/?api_key=" + API_KEY)
+                .then((response) => {
+                reviews = (response.data);
+                displayComments();
         });
         // return axios
         //     .get(apiWebsite + "comments/?api_key=" + API_KEY)
@@ -156,10 +162,11 @@ userInput.addEventListener("submit", (event) => {
         //         reviews = (response.data);
         //         displayComments();
         //     });
-    axios
-        .get(apiWebsite + "comments/?api_key=" + API_KEY)
-        .then((response) => {
-            reviews = (response.data);
+    // axios
+    //     .get(apiWebsite + "comments/?api_key=" + API_KEY)
+    //     .then((response) => {
+    //         reviews = (response.data);
+    // });
     });
     event.target.reset();
 });
