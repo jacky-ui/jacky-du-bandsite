@@ -363,13 +363,18 @@ body {
 .profile__img--color {
     background-color: colors.$secondary-color2;
     @include mixins.mobile-profile--sizing;
-    bottom: 0rem;
-    top: 1rem;
+    bottom: auto;
+    top: -0.5rem;
     left: -3rem;
 
     @include mixins.tablet {
         @include mixins.desktab-profile--sizing;
         left: -4rem;
+        bottom: auto;
+        top: -0.5rem;
+    }
+    @include mixins.desktop {
+
     }
 }
 

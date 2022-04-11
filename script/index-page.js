@@ -89,7 +89,7 @@ function displayComments() {
     reviewSection.innerText = "";
     // For every timestamp in the array it will convert to MM/DD/YYYY
     for (let i = 0; i < reviews.length; i++) {
-            reviews[i].timestamp =new Date(reviews[i].timestamp).toLocaleDateString();
+            reviews[i].timestamp = new Date(reviews[i].timestamp).toLocaleDateString();
         }
 
         // Will loop through every item in the array to create and append to HTML
@@ -123,7 +123,7 @@ function displayComments() {
             // Profile Picture
             const image = document.createElement("div");
             image.classList.add("profile__img--color");
-            reviewSection.appendChild(image);
+            reviewName.appendChild(image);
         });
 }
 // --ENDS
@@ -134,7 +134,10 @@ function displayComments() {
         .then((response) => {
             reviews = (response.data);
             displayComments();
-    });
+    })
+        .catch((error) => {
+            console.log("Sorry, there seems to be something wrong with your url. It's dangerous to go alone! Take this.");
+        });
 // --ENDS
 
 // Will take user inputs, post to api and display on page --BEGIN
@@ -154,6 +157,9 @@ userInput.addEventListener("submit", (event) => {
                 .then((response) => {
                 reviews = (response.data);
                 displayComments();
+        })
+        .catch((error) => {
+            console.log("Uh oh! Seems like you are missing the 'name' and 'comments'. Please try again!")
         });
     });
     event.target.reset();

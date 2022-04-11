@@ -493,6 +493,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .profile__img {
+    position: absolute;
     min-height: 3rem;
     max-height: 3rem;
     min-width: 3rem;
@@ -514,20 +515,22 @@ body {
   max-height: 2.25rem;
   min-width: 2.25rem;
   max-width: 2.25rem;
-  bottom: 0rem;
-  top: 1rem;
+  bottom: auto;
+  top: -0.5rem;
   left: -3rem;
 }
 @media screen and (min-width: 768px) {
   .profile__img--color {
+    position: absolute;
     min-height: 3rem;
     max-height: 3rem;
     min-width: 3rem;
     max-width: 3rem;
     left: -4rem;
+    bottom: auto;
+    top: -0.5rem;
   }
 }
-
 .profile--positioning {
   position: relative;
 }

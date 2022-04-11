@@ -26,7 +26,7 @@ function createShows() {
     shows.forEach((show) => {
 
         // Creates section tag 
-        const showsSection = document.createElement("section");
+        let showsSection = document.createElement("section");
         showsSection.classList.add("shows__section");
         sectionContainers.appendChild(showsSection); 
 
@@ -73,11 +73,7 @@ function createShows() {
         addShowBtn.innerText = "BUY TICKETS";
         showsSection.appendChild(addShowBtn);
     });
-    // let showsClass = document.querySelectorAll(".shows__details");
-    //     for (let i = 3; i < 18; i++) {
-    //         showsClass[i].classList.add(".shows__details--hidden");
-    //         console.log(showsClass[i]);
-    //     }
+    // Will invoke addClasses function below to add additional classes to span tags
     addClasses();
 };
 // --END
@@ -87,14 +83,13 @@ function addClasses() {
     let showsClass = document.querySelectorAll(".shows__details");
         for (let i = 3; i < 18; i++) {
             showsClass[i].classList.add("shows__details--hidden");
-            console.log(showsClass[i]);
         }
     showsClass[1].classList.add("shows__details--venue");
     showsClass[2].classList.add("shows__details--location");
-    console.log(showsClass[1]);
 };
 // --END
 
+// Will grab objects from apiWebsite and then invoke a function to create html elements
 axios
     .get(apiWebsite + "showdates/?api_key=" + API_KEY)
     .then((response) => {
@@ -102,25 +97,52 @@ axios
         createShows();
     });
 
+    // In Work
+// let activeSelects = [];
+// selects = document.querySelector(".shows__container").childNodes;
+// console.log(Array.from(selects));
+// activeSelects = selects;
+// console.log(typeof(activeSelects));
+
+// activeSelects.addEventListener("click", noName);
+
+// for (let i = 0; i < activeSelects.length; i++) {
+//     let addingEvents = activeSelects[i].addEventListener("click", (event) => {
+//         if(activeSelects[i] === "click") {
+//             activeSelects[i].classList.add("activeShow");
+//         }
+//     });
+// }
+
+// activeSelects.forEach((activeSelect) => {
+//     console.log(activeSelect);
+//     activeSelects.addEventListener("click", (event) => {
+//     })
+// });
+// selected.addEventListener("click", (event) => {
+//     console.log("clicked here");
+// });
+
+// Working on
+// setTimeout( () => {
+//     const activeSelected = document.querySelectorAll(".shows__section");
+//     console.log(activeSelected);
+
+//         activeSelected.addEventListener("click", (event) => {
+//         activeSelected.classList.add("activeShow");
+//         console.log(event);
+//         // activeSelected.classList.remove.toggle;
+//         })
+    
+// }),3000)
+
+
 // activeSelected.addEventListener("click", (event) =>{
 //     activeSelected.classList.add(".activeshow");
 // });
 
-
-// const activeSelected = document.querySelector(".shows__section");
-
-// setTimeout(function () {
-//     console.log(activeSelected);
-// }, 3000);
-
-// mainContainer.addEventListener("click", function(e) {
-//     if(e.target && e.target.matches("section.shows__section")) {
-//         activeSelected.classList.add("activeShow");
-//     }
-// })
-
 // activeSelected.addEventListener("click", (event) => {
 //     activeSelected.classList.add("activeShow");
 //     console.log(event);
-//     // activeSelected.classList.remove.toggle;
+    // activeSelected.classList.remove.toggle;
 // });
