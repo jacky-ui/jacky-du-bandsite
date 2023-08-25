@@ -18,14 +18,4 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-}
-body {
-  position: relative;
-  min-height: 100vh;
-}
-
-.checkout--positioning {
-  position: absolute;
-  bottom: 0%;
-  width: 100%;
 }/*# sourceMappingURL=checkout.css.map */
