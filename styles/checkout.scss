@@ -23,8 +23,8 @@
     & > div {
         background-color: $secondary-color3;
         width: 100%;
-        height: 10rem;
-        padding: 0rem 0.5rem;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
     }
 
     &__header {
@@ -34,6 +34,11 @@
     &__subheader {
         @include desk-tab-subheader;
         padding: 1rem;
+        margin: 0%;
         border-bottom: 1px solid $primary-color2;
+    }
+
+    &__para {
+        @include desk-tab-body;
     }
 }
