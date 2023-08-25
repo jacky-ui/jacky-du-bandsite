@@ -32,7 +32,7 @@
     align-items: center;
     padding: 0rem 2.25rem;
     margin: 4rem 0rem;
-    height: 26rem;
+    // height: 26rem;
 
     @include mobile {
         padding: 0rem 1rem;
@@ -130,6 +130,8 @@
             font-size: 1rem;
             line-height: normal;
             padding: 0.4rem 0.8rem;
+            border-radius: 0.2rem;
+            border: 1px solid $primary-color1;
 
             @include mobile {
                 height: fit-content;
@@ -151,4 +153,10 @@
             }
         }
     }
+}
+
+.cart__subtotal {
+    @include desk-tab-body;
+    margin: 3% 0% 1%;
+    text-align: end;
 }
