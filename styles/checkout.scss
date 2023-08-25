@@ -90,6 +90,10 @@
     &--details {
         @include desk-tab-subheader;
         color: $primary-color2;
+
+        @include mobile {
+            @include mobile-headersub;
+        }
     }
     &--date {
         @include desk-tab-body;
@@ -109,6 +113,12 @@
         font-weight: bold;
         font-size: 1rem;
         margin-bottom: 6%;
+
+        @include mobile {
+            @include mobile-text;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
     }
     // Styling of button container
     &--buttons {
@@ -121,8 +131,17 @@
             line-height: normal;
             padding: 0.4rem 0.8rem;
 
+            @include mobile {
+                height: fit-content;
+                padding: 3% 12%;
+            }
+
             &:last-child {
                 padding: 0.4rem 0.9rem;
+
+                @include mobile {
+                    padding: 3% 15%;
+                }
             }
 
             &:hover {

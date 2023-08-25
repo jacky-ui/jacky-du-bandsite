@@ -100,6 +100,14 @@
   font-weight: 600;
   color: #AFAFAF;
 }
+@media screen and (max-width: 767px) {
+  .cart__item--details {
+    font-family: "AvenirNext";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+  }
+}
 .cart__item--date {
   font-family: "AvenirNext";
   font-size: 0.875rem;
@@ -124,6 +132,16 @@
   font-size: 1rem;
   margin-bottom: 6%;
 }
+@media screen and (max-width: 767px) {
+  .cart__modifier--text {
+    font-family: "AvenirNext";
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: normal;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+}
 .cart__modifier--buttons {
   display: flex;
   justify-content: space-between;
@@ -137,8 +155,20 @@
   line-height: normal;
   padding: 0.4rem 0.8rem;
 }
+@media screen and (max-width: 767px) {
+  .cart__modifier--buttons button {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 3% 12%;
+  }
+}
 .cart__modifier--buttons button:last-child {
   padding: 0.4rem 0.9rem;
+}
+@media screen and (max-width: 767px) {
+  .cart__modifier--buttons button:last-child {
+    padding: 3% 15%;
+  }
 }
 .cart__modifier--buttons button:hover {
   cursor: pointer;
