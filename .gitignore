@@ -1,0 +1,9 @@
+#Ignore scss map files
+*.css.map
+
+#Ignore mock up and style guide 
+style-guide/
+mockups/
+
+#Ignore.DS_Store File
+.DS_Store

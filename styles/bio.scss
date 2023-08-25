@@ -1,0 +1,418 @@
+@use './partials/colors';
+@use './partials/typography';
+@use './partials/mixins';
+@use './partials/variables';
+
+// Input placeholders
+*::-webkit-input-placeholder {
+    color: colors.$secondary-color1;
+    @include mixins.mobile-text;
+
+    @include mixins.tablet {
+        @include mixins.desk-tab-body;
+    }
+}
+
+input {
+    @include mixins.mobile-text;
+    color: colors.$secondary-color1;
+
+    @include mixins.tablet {
+        @include mixins.desk-tab-body;
+    }
+}
+
+body {
+    margin: 0;
+    background-color: colors.$primary-color3;
+}
+
+// Hero banner 
+.hero {
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-position: right;
+    background-size: cover;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 50vh;
+    max-height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include mixins.tablet {
+        min-height: 75vh;
+    }
+
+    @include mixins.desktop {
+        min-height: 90vh;
+    }
+
+    &::before {
+        @include mixins.background-opacity;
+    }
+
+    &__text {
+        @include mixins.mobile-header;
+        color: colors.$primary-color3;
+        margin-top: 0;
+        position: relative;
+        @include mixins.mobile-padding;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-pgheader;
+            @include mixins.tablet-padding;
+
+            @include mixins.desktop {
+                padding-left: 5rem;
+            }
+        }
+    }
+}
+
+// // About Band section
+.about {
+    @include mixins.mobile-padding;
+
+    @include mixins.tablet {
+        @include mixins.tablet-padding;
+    }
+    @include mixins.desktop {
+        @include mixins.desktop-margin;
+        padding: 0;
+    }
+
+    // About section image
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mixins.tablet { 
+            margin-left: 3.5rem;
+            margin-right: 3.5rem;
+        }
+        @include mixins.desktop {
+            @include mixins.desktop-margin;
+        }
+    
+        &--sizing {
+            width: 100%; 
+        }
+    }
+    // About section quote
+    &__quote {
+        @include mixins.mobile-headersub;
+        color: colors.$primary-color1;
+        // margin: 16rem;
+
+        @include mixins.tablet {
+           margin: 2.25rem 3.5rem;
+           @include mixins.desk-tab-subheader;
+           font-size: 1.25rem;
+        }
+        @include mixins.desktop {
+            margin: 2.25rem 5rem;
+            width: 64%;
+            font-size: 1.5rem;
+        }
+    }
+    &__heading {
+        color: colors.$primary-color1;
+        @include mixins.mobile-header;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            margin-top: 3rem;
+            margin-bottom: 2.25rem;
+            @include mixins.desk-tab-subheader;
+            font-size: 2rem;
+        }
+        @include mixins.desktop {
+            @include mixins.desk-tab-subheader;
+            font-size: 2rem;
+        }
+    }
+}
+
+// Band Autobiography
+.autobiography {
+    @include mixins.tablet {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+
+        @include mixins.desktop {
+            margin-left: 3.5rem;
+            margin-right: 3.5rem;
+        }
+    }
+    &__heading {
+        @include mixins.mobile-headersub;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-subheader;
+                margin-left: 1.5rem;
+                font-size: 1rem;
+        }
+    }
+    &__paragraphs {
+        @include mixins.tablet {
+            display: flex;
+            flex-direction: row;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        &--style {
+            @include mixins.mobile-text;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-body;
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+}
+
+// Photo Gallery
+.gallery {
+    // padding-top: 1.5rem;
+    background-color: colors.$secondary-color3;
+
+    @include mixins.tablet {
+        @include mixins.tablet-padding;
+        padding-bottom: 1rem;
+    }
+    @include mixins.desktop {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include mixins.mobile-padding;
+
+        @include mixins.tablet {
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }  
+    }
+    &__heading {
+        @include mixins.mobile-header;
+        padding-top: 1.5rem;
+        margin-bottom: 1rem;
+        margin-top: 0;
+        @include mixins.mobile-padding;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-secheader;
+            padding: 3rem 0rem 2.25rem 0rem;
+            margin-bottom: 0;
+
+        @include mixins.desktop {
+            @include mixins.desk-tab-secheader;
+        }
+        }
+    }
+
+    &__img--sizing {
+        width: 100%;
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            width: 31%;
+        }
+    }
+}
+
+// Comment Section
+.comment {
+    @include mixins.mobile-padding;
+    padding-top: 1.5rem;
+    background-color: colors.$primary-color3;
+    padding-bottom: 1rem;
+
+    @include mixins.tablet {
+        @include mixins.tablet-padding;
+        padding-top: 3rem;
+        padding-right: 4rem;
+    }
+    @include mixins.desktop {
+        @include mixins.desktop-padding;
+        padding-bottom: 1.5rem
+    }
+    &__heading {
+        @include mixins.mobile-headersub;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-bottom: 1rem;
+        color: colors.$primary-color1;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-secheader;
+            padding-bottom: 1.5rem;
+        }
+        @include mixins.desktop {
+            @include mixins.desk-tab-secheader;
+        }
+    }
+    &__sections {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 80%;
+        margin-left: auto;
+
+        @include mixins.desktop {
+            display: flex;
+            justify-content: center;
+            width: 40%;
+            margin: auto;
+        }
+    }
+    &__button {
+        height: 2.5rem;
+        background-color: colors.$primary-color1;
+        color: colors.$primary-color3;
+        border-radius: 4px;
+        border-style: none;
+        cursor: pointer;
+        padding: auto;
+        margin-bottom: 1rem;
+        @include mixins.mobile-labelsbtn;
+
+        @include mixins.tablet {
+            align-self: end;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            @include mixins.desk-tab-labelsbtn;
+            padding-bottom: 2.25rem;
+        }
+        &:hover {
+            background-color: colors.$secondary-color1;
+        }
+    }
+    &--name {
+        height: 2.25rem;
+        padding-left: 1rem;
+        // Fix border color issue and give border radius
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            height: 3rem;
+        }
+        &:focus {
+            border-color: colors.$secondary-color1;
+            outline: 0;
+        }
+    }
+    &--comments {
+        padding-left: 1rem;
+        padding-top: 0.75rem;
+        margin-bottom: 1rem;
+        height: 5.6rem;
+        resize: none;
+        color: colors.$secondary-color1;
+        @include mixins.mobile-text;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-body;
+        }
+        &:focus {
+            border: 2px solid;
+            border-color: colors.$secondary-color1;
+            outline: 0;
+        }
+    }
+    &__title {
+        @include mixins.mobile-headersub;
+        color: colors.$primary-color2;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-subheader;
+            font-size: 1rem;
+        }
+    }
+}
+
+#formSubmission {
+    width: 100%;
+}
+
+// Comment and review profile picture
+.profile__img {
+    @include mixins.mobile-profile--sizing;
+    left: -3.2rem;
+
+    @include mixins.tablet {
+        @include mixins.desktab-profile--sizing;
+        left: -4rem;
+    }
+    @include mixins.tablet {
+        top: 0rem;
+    }
+}
+
+.profile__img--color {
+    background-color: colors.$secondary-color2;
+    @include mixins.mobile-profile--sizing;
+    bottom: auto;
+    top: -0.5rem;
+    left: -3rem;
+
+    @include mixins.tablet {
+        @include mixins.desktab-profile--sizing;
+        left: -4rem;
+        bottom: auto;
+        top: -0.5rem;
+    }
+    @include mixins.desktop {
+
+    }
+}
+
+.profile--positioning {
+    position: relative;
+}
+
+// Review section
+.review {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 1rem;
+    border-top: 1px solid colors.$secondary-color2;
+
+    &__heading {
+        @include mixins.mobile-headersub;
+        position: relative;
+
+        @include mixins.tablet {
+        @include mixins.desk-tab-subheader;
+        font-size: 1rem;
+        }
+    }
+    &--date {
+        @include mixins.mobile-text;
+        color: colors.$primary-color2;
+
+        @include mixins.tablet {
+        @include mixins.desk-tab-body;
+        }
+    }
+    &__paragraph {
+        @include mixins.mobile-text;
+        margin-top: 0.5rem;
+
+        @include mixins.tablet {
+        @include mixins.desk-tab-body;
+        }
+    }
+}

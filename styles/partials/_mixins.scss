@@ -1,0 +1,143 @@
+@use './typography';
+@use './variables';
+
+// Font mixins mobile
+@mixin mobile-header {
+    font-family: 'AvenirNext';
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+}
+
+@mixin mobile-headersub {
+    font-family: 'AvenirNext';
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+}
+
+@mixin mobile-text {
+    font-family: 'AvenirNext';
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: normal;
+}
+
+@mixin mobile-labelsbtn {
+    font-family: 'AvenirNext';
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+}
+
+// Font mixins desktop and tablet
+@mixin desk-tab-pgheader {
+    font-family: 'AvenirNext';
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: bold;
+}
+
+@mixin desk-tab-secheader {
+    font-family: 'AvenirNext';
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+}
+
+@mixin desk-tab-subheader {
+    font-family: 'AvenirNext';
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+@mixin desk-tab-body {
+    font-family: 'AvenirNext';
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+}
+
+@mixin desk-tab-footer {
+    font-family: 'AvenirNext';
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+}
+
+@mixin desk-tab-labelsbtn {
+    font-family: 'AvenirNext';
+    font-size: 0.75em;
+    line-height: 2.75rem;
+    font-weight: 700;
+}
+
+// Screen mixins
+@mixin tablet {
+    @media screen and (min-width: variables.$tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: variables.$desktop-breakpoint) {
+        @content;
+    }
+}
+
+// Inactive links
+@mixin inactive-link {
+    font-family: 'AvenirNext';
+    font-size: 0.801rem;
+    line-height: 2rem;
+}
+
+// Background Opacity 
+@mixin background-opacity {
+    background-color: rgba(50, 50, 50, 0.5);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+// Padding and margin mixins
+@mixin mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@mixin tablet-padding {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+}
+
+@mixin desktop-padding {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+@mixin desktop-margin {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+// Comment and Review profile img size
+@mixin mobile-profile--sizing {
+    position: absolute;
+    border-radius: 50%;
+    min-height: 2.25rem;
+    max-height: 2.25rem;
+    min-width: 2.25rem;
+    max-width: 2.25rem;
+}
+
+@mixin desktab-profile--sizing {
+    position: absolute;
+    min-height: 3rem;
+    max-height: 3rem;
+    min-width: 3rem;
+    max-width: 3rem;
+}

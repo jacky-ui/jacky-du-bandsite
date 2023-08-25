@@ -1,0 +1,265 @@
+@use './partials/colors';
+@use './partials/typography';
+@use './partials/mixins';
+@use './partials/variables';
+
+// Hero Banner
+.hero__shows {
+    background-image: url(../assets/images/hero-shows.jpg);
+    background-position: center;
+    background-size: cover;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 60vh;
+    max-height: 60vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @include mixins.tablet {
+        min-height: 80vh;
+        background-position: top;
+    }
+
+    @include mixins.desktop {
+        min-height: 90vh;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &::before {
+        @include mixins.background-opacity;
+    }
+
+    &--text {
+        @include mixins.mobile-header;
+        color: colors.$primary-color3;
+        margin-top: 0;
+        position: relative;
+        width: 80%;
+        margin-bottom: -1rem;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-secheader;
+            width: 70%;
+            font-size: 3.25rem;
+            font-weight:600;
+            line-height: 4rem;
+            margin-bottom: 1rem;
+        }
+        @include mixins.desktop {
+            width: 72%;
+            margin-right: 0rem;
+        }
+    }
+    &--album {
+        @include mixins.mobile-headersub;
+        color: colors.$primary-color3;
+        position: relative;
+        font-weight: normal;
+        margin-bottom: 1rem;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-subheader;
+            font-weight: normal;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &--soundcloud {
+        width: 100%;
+        height: 20vh;
+        @include mixins.mobile-padding;
+
+        @include mixins.tablet {
+            width: 55%;
+            height: 25vh;
+            @include mixins.tablet-padding;
+        }
+        @include mixins.desktop {
+            width: 60%;
+            padding-right: 5rem;
+        }
+    }
+}
+
+.hero__container {
+    @include mixins.mobile-padding;
+
+    @include mixins.tablet {
+        @include mixins.desk-tab-pgheader;
+        @include mixins.tablet-padding;
+
+        @include mixins.desktop {
+                padding-left: 5rem;
+        }
+    }
+}
+
+// Show Times
+.shows {
+    @include mixins.mobile-padding;
+    color: colors.$primary-color3;
+    padding-bottom: 1rem;
+
+    @include mixins.tablet {
+        @include mixins.tablet-padding;
+        padding-bottom: 1.5rem;
+        }
+        @include mixins.desktop {
+            @include mixins.desktop-padding;
+    }
+    &__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-bottom: 1px solid colors.$secondary-color2;
+        border-width: 100%;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            padding-bottom: 1rem;
+            gap: 1rem;
+        }
+        @include mixins.desktop {
+            width: 72%;
+        }
+        &:hover {
+            background-color: colors.$secondary-color3;
+            cursor: pointer;
+        }
+    }
+    &__header {
+        @include mixins.mobile-header;
+        color: colors.$primary-color1;
+        margin: 0;
+        padding-top: 1rem;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-secheader;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        @include mixins.desktop {
+            margin-top: auto;
+            margin-bottom: -5.5rem;
+        }
+    }
+    &__details {
+        @include mixins.mobile-headersub;
+        color: colors.$primary-color2;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        
+        @include mixins.tablet {
+            @include mixins.desk-tab-subheader;
+            font-size: 1rem;
+            padding-bottom: 1.25rem;
+            position: absolute;
+        }
+        @include mixins.desktop {
+            margin-bottom: 0rem;
+            padding-bottom: 0rem;
+            // position: static;
+        }
+        &--venue {
+            @include mixins.tablet {
+                position: absolute;
+                left: 30%;
+                right: auto;
+            }
+            @include mixins.desktop {
+                // position: static;
+                left: 47.5%;
+            }
+        }
+        &--location {
+            @include mixins.tablet {
+                position: absolute;
+                left: auto;
+                right: 35%;
+            }
+            @include mixins.desktop {
+                // position: static;
+                right: 29%;
+            }
+        }
+        &--hidden {
+            @include mixins.tablet {
+                visibility: hidden;
+                position: absolute;
+            }
+            @include mixins.desktop {
+                // position: static;
+            }
+        }
+    }
+    &__description {
+        color: colors.$secondary-color1;
+        @include mixins.mobile-text;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-body;
+            align-self: end;
+        }
+        @include mixins.desktop {
+            margin-top: auto;
+            margin-bottom: 0.5rem;
+        }
+        &--bold {
+            color: colors.$secondary-color1;
+            @include mixins.mobile-text;
+            font-weight: bold;
+
+            @include mixins.tablet {
+                @include mixins.desk-tab-body;
+                font-weight: bold;
+                align-self: end;
+            }
+            @include mixins.desktop {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+    &__button {
+        height: 2.5rem;
+        background-color: colors.$primary-color1;
+        color: colors.$primary-color3;
+        border-radius: 4px;
+        border-style: none;
+        cursor: pointer;
+        padding: auto;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        @include mixins.mobile-labelsbtn;
+
+        @include mixins.tablet {
+            @include mixins.desk-tab-labelsbtn;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            margin-bottom: auto;
+            margin-top: 2rem;
+            margin-left: 1rem;
+        }
+        @include mixins.desktop {
+            margin-right: 1rem;
+            margin-left: 4rem;
+        }
+    }
+}
+
+.activeShow {
+    background-color: colors.$primary-color2;
+}
+
+.shows__container {
+    @include mixins.tablet {
+        position: relative;
+    }
+    @include mixins.desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: self-end;
+        // position: static;
+    }
+}
