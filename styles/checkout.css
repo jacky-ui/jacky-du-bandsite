@@ -19,6 +19,31 @@
   font-style: normal;
   font-display: swap;
 }
+@media screen and (min-height: 779px) {
+  body {
+    position: relative;
+    min-height: 100vh;
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+    position: unset;
+  }
+}
+
+@media screen and (min-height: 779px) {
+  .checkout--positioning {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .checkout--positioning {
+    position: unset;
+  }
+}
+
 .cartContainer {
   padding: 0rem 2.25rem;
   margin: 4rem 0rem;

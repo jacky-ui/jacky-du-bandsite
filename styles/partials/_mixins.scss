@@ -75,7 +75,7 @@
 
 // Screen mixins
 @mixin mobile {
-    @media screen and (min-width: variables.$mobile-breakpoint) {
+    @media screen and (max-width: variables.$mobile-breakpoint) {
         @content;
     }
 }

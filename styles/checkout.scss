@@ -4,16 +4,27 @@
 @use './partials/variables' as *;
 
 // Styling to make footer stay at bottom
-// body {
-//     position: relative;
-//     min-height: 100vh;
-// }
+body {
+    @media screen and (min-height:779px) {
+        position: relative;
+        min-height: 100vh;
+        // height: 15rem;
+    }
+    @include mobile {
+        position: unset;
+    }
+}
 
-// .checkout--positioning {
-//     position: absolute;
-//     bottom: 0%;
-//     width: 100%;
-// }
+.checkout--positioning {
+    @media screen and (min-height:779px) {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+    }
+    @include mobile {
+        position: unset;
+    }
+}
 
 .cartContainer {
     padding: 0rem 2.25rem;
