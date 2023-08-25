@@ -2,3 +2,15 @@
 @use './partials/typography';
 @use './partials/mixins';
 @use './partials/variables';
+
+// Styling to make footer stay at bottom
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+.checkout--positioning {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
