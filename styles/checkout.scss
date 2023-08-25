@@ -4,32 +4,35 @@
 @use './partials/variables' as *;
 
 // Styling to make footer stay at bottom
-body {
-    @media screen and (min-height:779px) {
-        position: relative;
-        min-height: 100vh;
-        // height: 15rem;
-    }
-    @include mobile {
-        position: unset;
-    }
-}
+// body {
+//     @media screen and (min-height:779px) {
+//         position: relative;
+//         min-height: 100vh;
+//         // height: 15rem;
+//     }
+//     @include mobile {
+//         position: unset;
+//     }
+// }
 
-.checkout--positioning {
-    @media screen and (min-height:779px) {
-        position: absolute;
-        bottom: 0%;
-        width: 100%;
-    }
-    @include mobile {
-        position: unset;
-    }
-}
+// .checkout--positioning {
+//     @media screen and (min-height:779px) {
+//         position: absolute;
+//         bottom: 0%;
+//         width: 100%;
+//     }
+//     @include mobile {
+//         position: unset;
+//     }
+// }
 
 .cartContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0rem 2.25rem;
     margin: 4rem 0rem;
-    height: 15rem;
+    height: 26rem;
 
     @include mobile {
         padding: 0rem 1rem;
@@ -40,6 +43,10 @@ body {
         width: 100%;
         padding: 1rem 2rem;
         border-radius: 1rem;
+
+        @include desktop {
+            width: 50rem;
+        }
     }
 
     &__header {
@@ -64,5 +71,65 @@ body {
 
     &__para {
         @include desk-tab-body;
+    }
+}
+
+// Styling for items in cart
+.cart__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0rem;
+    border-bottom: 1px solid $primary-color2;
+
+    & > div:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem
+    }
+    &--details {
+        @include desk-tab-subheader;
+        color: $primary-color2;
+    }
+    &--date {
+        @include desk-tab-body;
+        font-weight: bold;
+    }
+    &--text {
+        @include desk-tab-body;
+        color: $secondary-color1;
+    }
+}
+
+// Styling for cart modifier
+.cart__modifier {
+
+    &--text {
+        @include desk-tab-body;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 6%;
+    }
+    // Styling of button container
+    &--buttons {
+        display: flex;
+        justify-content: space-between;
+        // Styling of individual buttons
+        & button {
+            @include desk-tab-subheader;
+            font-size: 1rem;
+            line-height: normal;
+            padding: 0.4rem 0.8rem;
+
+            &:last-child {
+                padding: 0.4rem 0.9rem;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: $primary-color1;
+                color: $primary-color3;
+            }
+        }
     }
 }
