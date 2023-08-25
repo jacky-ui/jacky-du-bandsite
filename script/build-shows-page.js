@@ -4,6 +4,9 @@ const apiWebsite = "https://project-1-api.herokuapp.com/";
 
 const mainContainer = document.querySelector(".shows");
 
+// Set localStorage here for testing
+localStorage.setItem('cartItems', 5);
+
 // create div
 const sectionContainers = document.createElement("div");
 sectionContainers.classList.add("shows__container");

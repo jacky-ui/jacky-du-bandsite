@@ -31,6 +31,10 @@ body {
     margin: 4rem 0rem;
     height: 15rem;
 
+    @include mobile {
+        padding: 0rem 1rem;
+    }
+
     & > div {
         background-color: $secondary-color3;
         width: 100%;
@@ -40,6 +44,11 @@ body {
 
     &__header {
         @include desk-tab-secheader;
+
+        @include mobile {
+            @include mobile-header;
+            // font-size: 1.875rem
+        }
     }
 
     &__subheader {
@@ -47,6 +56,10 @@ body {
         padding: 1rem;
         margin: 0%;
         border-bottom: 1px solid $primary-color2;
+
+        @include mobile {
+            @include mobile-headersub;
+        }
     }
 
     &__para {
