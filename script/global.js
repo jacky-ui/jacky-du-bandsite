@@ -14,3 +14,7 @@ function checkPosition() {
 }
 
 window.addEventListener("scroll", checkPosition);
+
+checkoutIcon.addEventListener("click", () => {
+    checkoutIcon.classList.add("element--hidden");
+});
