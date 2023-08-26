@@ -4,7 +4,7 @@ let cartPara = document.querySelector("#cartPara");
 let cartItemContainer = document.querySelector(".cart");
 let cartSubtotalText = document.querySelector(".cart__subtotal");
 
-localStorage.setItem("cartItem", 2);
+localStorage.setItem("cartItem", 0);
 
 // Grab variable from localStorage
 let customerCart = localStorage.cartItems;
