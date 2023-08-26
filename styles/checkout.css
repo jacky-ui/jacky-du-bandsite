@@ -175,6 +175,7 @@
   cursor: pointer;
   background-color: #323232;
   color: #FFFFFF;
+  transition: 0.3s;
 }
 
 .cart__subtotal {

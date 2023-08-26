@@ -14,7 +14,6 @@ const reviewSection = document.createElement("section");
 // Declare empty array which comments from apiWebsite will be passed into
 let reviews = [];
 
-
 // Create section tag with class
 function makeSection(section, name) {
     commentSections.classList.add("comment__sections");
