@@ -240,6 +240,7 @@ body {
   position: fixed;
   top: 50%;
   right: 2%;
+  z-index: 2;
   background-color: #AFAFAF;
   padding: 1rem;
   border-radius: 2.5rem;
