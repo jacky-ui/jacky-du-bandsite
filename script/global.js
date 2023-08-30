@@ -26,3 +26,10 @@ modalButton.addEventListener("click", () => {
     checkoutIcon.classList.remove("element--hidden");
     modal.classList.add("element--hidden");
 });
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.classList.add("element--hidden");
+        checkoutIcon.classList.remove("element--hidden");
+    };
+};
