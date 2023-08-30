@@ -15,6 +15,17 @@ mainContainer.appendChild(sectionContainers);
 // Empty show array which will be push from api
 let shows = [];
 
+// Will add additional classes to element --BEGIN
+function addClasses() {
+    let showsClass = document.querySelectorAll(".shows__details");
+        for (let i = 3; i < 18; i++) {
+            showsClass[i].classList.add("shows__details--hidden");
+        }
+    showsClass[1].classList.add("shows__details--venue");
+    showsClass[2].classList.add("shows__details--location");
+};
+// --END
+
 // Will take array and create show times --BEGIN
 function createShows() {
 
@@ -73,7 +84,9 @@ function createShows() {
         const addShowBtn = document.createElement("button");
         addShowBtn.setAttribute("type", "submit");
         addShowBtn.classList.add("shows__button");
+        addShowBtn.setAttribute("id", "showsButton");
         addShowBtn.innerText = "BUY TICKETS";
+        addEventToButtons(addShowBtn);
         showsSection.appendChild(addShowBtn);
     });
     // Will invoke addClasses function below to add additional classes to span tags
@@ -81,16 +94,12 @@ function createShows() {
 };
 // --END
 
-// Will add additional classes to element --BEGIN
-function addClasses() {
-    let showsClass = document.querySelectorAll(".shows__details");
-        for (let i = 3; i < 18; i++) {
-            showsClass[i].classList.add("shows__details--hidden");
-        }
-    showsClass[1].classList.add("shows__details--venue");
-    showsClass[2].classList.add("shows__details--location");
+// Function to add eventlistener to buttons
+function addEventToButtons(button) {
+    button.addEventListener("click", () => {
+        console.log("hello world");
+    })
 };
-// --END
 
 // Will grab objects from apiWebsite and then invoke a function to create html elements
 axios
