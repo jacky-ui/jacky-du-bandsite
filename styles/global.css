@@ -254,7 +254,7 @@ body {
   width: 2rem;
 }
 
-.sideCart {
+.modal {
   position: fixed;
   top: 0%;
   right: 0%;
@@ -264,29 +264,37 @@ body {
   width: 100%;
   height: 100%;
 }
-.sideCart > div {
+.modal > div {
   position: relative;
   background-color: #FFFFFF;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding: 2rem;
   border: 1px solid #323232;
   border-radius: 1rem;
-  width: 80%;
+  width: 60%;
 }
-.sideCart__header {
+.modal__header {
   font-family: "AvenirNext";
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 400;
   font-weight: bold;
   border-bottom: 1px solid #AFAFAF;
-  padding-bottom: 5%;
+  padding-bottom: 3%;
+  line-height: normal;
 }
-.sideCart__button {
+.modal__button {
   position: absolute;
   top: 0%;
   right: 0%;
+  border: none;
+  border-radius: 1rem;
+  background-color: #FFFFFF;
+  font-size: 1.5rem;
   font-weight: bold;
+}
+.modal__button:hover {
+  cursor: pointer;
 }
 
 .element--hidden {

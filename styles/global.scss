@@ -214,7 +214,7 @@ body {
 }
 
 // Styling for side cart on Bio and Show page
-.sideCart {
+.modal {
     position: fixed;
     top: 0%;
     right: 0%;
@@ -232,22 +232,31 @@ body {
         position: relative;
         background-color: colors.$primary-color3;
         margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
+        padding: 2rem;
         border: 1px solid colors.$primary-color1;
         border-radius: 1rem;
-        width: 80%;
+        width: 60%;
     }
     &__header {
         @include mixins.desk-tab-body;
         font-weight: bold;
         border-bottom: 1px solid colors.$primary-color2;
-        padding-bottom: 5%;
+        padding-bottom: 3%;
+        line-height: normal;
     }
     &__button {
         position: absolute;
         top: 0%;
         right: 0%;
+        border: none;
+        border-radius: 1rem;
+        background-color: colors.$primary-color3;
+        font-size: 1.5rem;
         font-weight: bold;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
