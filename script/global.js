@@ -1,5 +1,7 @@
 // Grab and store elements as variables
 let checkoutIcon = document.querySelector("#shoppingCart");
+let modal = document.querySelector("#modalBox");
+let modalButton = document.querySelector("#modalButton");
 
 let scrollPos = 0;
 
@@ -17,4 +19,10 @@ window.addEventListener("scroll", checkPosition);
 
 checkoutIcon.addEventListener("click", () => {
     checkoutIcon.classList.add("element--hidden");
+    modal.classList.remove("element--hidden");
+});
+
+modalButton.addEventListener("click", () => {
+    checkoutIcon.classList.remove("element--hidden");
+    modal.classList.add("element--hidden");
 });
