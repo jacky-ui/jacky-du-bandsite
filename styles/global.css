@@ -273,15 +273,122 @@ body {
   border-radius: 1rem;
   width: 60%;
 }
+@media screen and (max-width: 767px) {
+  .modal > div {
+    width: 90%;
+  }
+}
 .modal__header {
   font-family: "AvenirNext";
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 400;
   font-weight: bold;
+  font-size: 1.5rem;
   border-bottom: 1px solid #AFAFAF;
   padding-bottom: 3%;
   line-height: normal;
+  margin-bottom: 0;
+}
+.modal__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+  border-bottom: 1px solid #AFAFAF;
+}
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: "AvenirNext";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+.modal__content--details {
+  font-family: "AvenirNext";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: #AFAFAF;
+}
+@media screen and (max-width: 767px) {
+  .modal__content--details {
+    font-family: "AvenirNext";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+  }
+}
+.modal__content--date {
+  font-family: "AvenirNext";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+  font-weight: bold;
+}
+.modal__content--text {
+  font-family: "AvenirNext";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+  color: #000000;
+}
+.modal__modifier--text {
+  font-family: "AvenirNext";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 6%;
+}
+@media screen and (max-width: 767px) {
+  .modal__modifier--text {
+    font-family: "AvenirNext";
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: normal;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+}
+.modal__modifier--buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.modal__modifier--buttons button {
+  font-family: "AvenirNext";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: normal;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.2rem;
+  border: 1px solid #323232;
+}
+@media screen and (max-width: 767px) {
+  .modal__modifier--buttons button {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 3% 12%;
+  }
+}
+.modal__modifier--buttons button:last-child {
+  padding: 0.4rem 0.9rem;
+}
+@media screen and (max-width: 767px) {
+  .modal__modifier--buttons button:last-child {
+    padding: 3% 15%;
+  }
+}
+.modal__modifier--buttons button:hover {
+  cursor: pointer;
+  background-color: #323232;
+  color: #FFFFFF;
+  transition: 0.3s;
 }
 .modal__button {
   position: absolute;
